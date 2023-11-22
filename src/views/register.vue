@@ -1,15 +1,17 @@
 <template>
   <logo> </logo>
   <div class="form">
-    <h4>Sign in</h4>
+    <h4>Register</h4>
     <label for="email"></label>
     <input type="email" id="email" />
     <label for="password"></label>
     <input type="password" id="password" />
-    <button c>Sign in</button>
+    <label for="confirm-password"></label>
+    <input type="confirm-password" id="confirm-password" />
+    <button>Submit</button>
     <div>
-      <p>Don't have an account?</p>
-      <router-link :to="{ name: 'Register' }"> Register</router-link>
+      <p>Already have an account?</p>
+      <router-link :to="{ name: 'Sign-in' }"> Sign-in</router-link>
     </div>
   </div>
 </template>
