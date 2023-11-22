@@ -1,10 +1,7 @@
 <template>
   <nav>
     <div class="container">
-      <div class="logo">
-        <img src="../../assets/logo/logo.png" alt="logo-icon" />
-        <span> my Dream Place</span>
-      </div>
+      <logo> </logo>
       <div class="links">
         <a href="#">Home</a>
         <a href="#">Discover</a>

@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="main-layout">
-      <img src="../../assets/main/main.png" alt="main-section-image" />
+      <img src="../../assets/main-section/main.png" alt="main-section-image" />
       <div class="main-text">
         <h2>Enjoy Your Dream Vacation</h2>
         <p>
