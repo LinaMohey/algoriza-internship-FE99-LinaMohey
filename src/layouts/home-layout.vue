@@ -1,14 +1,10 @@
 <template>
-  <nav>
-    <Navbar />
-  </nav>
+  <navbar> </navbar>
   <slot></slot>
-  <footer>
-    <Footer />
-  </footer>
+  <the-footer> </the-footer>
 </template>
 
 <script setup>
 import Navbar from "@/components/UI/Navbar.vue";
-import Footer from "@/components/UI/Footer.vue";
+import TheFooter from "@/components/UI/TheFooter.vue";
 </script>
