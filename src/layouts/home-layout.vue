@@ -5,6 +5,6 @@
 </template>
 
 <script setup>
-import Navbar from "@/components/UI/Navbar.vue";
-import TheFooter from "@/components/UI/TheFooter.vue";
+import Navbar from "@/components/UI/navbar.vue";
+import TheFooter from "@/components/UI/the-footer.vue";
 </script>

@@ -15,5 +15,4 @@ import MainSection from "@/components/sections/main-section.vue";
 import DreamVacation from "@/components/sections/dream-vacation.vue";
 import InspirationTrips from "@/components/sections/inspiration-trips.vue";
 import PopularHotels from "@/components/sections/popular-hotels.vue";
-import WarningSection from "@/components/sections/warning-section.vue";
 </script>

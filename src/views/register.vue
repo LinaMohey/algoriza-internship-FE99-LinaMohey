@@ -11,7 +11,7 @@
     <button>Submit</button>
     <div>
       <p>Already have an account?</p>
-      <router-link :to="{ name: 'Sign-in' }"> Sign-in</router-link>
+      <router-link :to="{ name: 'sign-in' }"> Sign-in</router-link>
     </div>
   </div>
 </template>
