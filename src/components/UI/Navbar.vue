@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="container">
+    <div class=" font-body container">
       <logo> </logo>
       <div class="links">
         <a href="#">Home</a>
