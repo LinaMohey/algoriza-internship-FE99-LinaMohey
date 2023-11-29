@@ -1,8 +1,11 @@
 <template>
   <!-- Sort by -->
   <div class="sort-by">
-    <label for="sortSelect">Sort by:</label>
     <select v-model="selectedSort">
+      <option value="">
+        Sort by <br />
+        <span class="text-grayColor-400">Recommended</span>
+      </option>
       <option
         v-for="sortOption in sortOptions"
         :key="sortOption.id"
