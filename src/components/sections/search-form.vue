@@ -61,7 +61,8 @@ const checkIn = ref("");
 const checkOut = ref("");
 const rooms = ref(1);
 const guests = ref(1);
-const destinations = ref(searchResultStore.destinations);
+const destinations = computed(() => searchResultStore.destinations);
+
 const loading = ref(true);
 
 // Fetch destinations

@@ -11,7 +11,6 @@ export const useAuthStore = defineStore("auth", {
   }),
   actions: {
     // Sign In
-
     async signIn(email, password) {
       const usersArray = userData.users || [];
       const user = usersArray.find(
@@ -51,11 +50,9 @@ export const useAuthStore = defineStore("auth", {
 
       // add new user
       const newUser = { id: usersArray.length + 1, email, password };
-
       usersArray.push(newUser);
       this.isAuthenticated = true;
       this.user = newUser;
-
       //save to local storage
       localStorage.setItem("authenticated-user", JSON.stringify(newUser));
 
@@ -69,6 +66,10 @@ export const useAuthStore = defineStore("auth", {
         console.log(res.error);
       }
       return true;
+    },
+
+    toggleWelcomeModal() {
+      this.showWelcomeModal = !this.showWelcomeModal;
     },
   },
 });

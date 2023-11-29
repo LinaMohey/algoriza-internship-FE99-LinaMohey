@@ -35,8 +35,8 @@ const submitForm = async () => {
   );
 
   if (isRegister) {
-    // if the register is successful
-    router.push({ name: "welcome-card" });
+    router.push("/welcome");
+    console.log("Successful registration");
   } else {
     console.log("Registration failed.");
   }

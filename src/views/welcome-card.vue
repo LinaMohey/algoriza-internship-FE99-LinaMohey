@@ -8,6 +8,8 @@
       You can now enjoy your travel experience with easy access to resources and
       more
     </p>
-    <router-link :to="{ name: 'search-results' }"> Get Started</router-link>
+    <router-link :to="{ name: 'home-page' }"> Get Started</router-link>
   </div>
 </template>
+
+<script setup></script>

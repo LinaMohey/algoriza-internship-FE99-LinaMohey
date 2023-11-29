@@ -15,11 +15,11 @@
 </template>
 <script setup>
 import { useSearchResultStore } from "@/store/modules/searchResults";
-import { ref, watchEffect } from "vue";
+import { ref, computed, watchEffect } from "vue";
 
 const searchResultStore = useSearchResultStore();
 
-const sortOptions = ref(searchResultStore.sortOptions);
+const sortOptions = computed(() => searchResultStore.sortOptions);
 const selectedSort = ref("");
 
 watchEffect(() => {
