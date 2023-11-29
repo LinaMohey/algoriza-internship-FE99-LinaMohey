@@ -30,9 +30,37 @@
 
         <div
           v-if="showDropdown"
-          class="dropdown-menu absolute right-0 mt-2 bg-white border rounded-md shadow-md p-2 z-50"
+          class="dropdown-menu absolute right-0 bg-white border rounded-md shadow-md z-50"
         >
-          <button @click="signOut" class="text-red-500">Sign Out</button>
+          <ul class="">
+            <li class="flex items-center px-4 cursor-pointer">
+              <div>
+                <img
+                  src="@/assets/drop-down/user.png"
+                  alt=""
+                  class="mr-2 h-6 w-6"
+                />
+              </div>
+              <div class="">Manage account</div>
+            </li>
+
+            <li class="flex items-center px-4 cursor-pointer">
+              <div><img src="@/assets/drop-down/plane.png" alt="" /></div>
+              <div>My trips</div>
+            </li>
+
+            <li class="flex items-center px-4 cursor-pointer">
+              <div><img src="@/assets/drop-down/wallet.png" alt="" /></div>
+              <div>Reward and wallet</div>
+            </li>
+
+            <li class="flex items-center px-4 cursor-pointer">
+              <button @click="signOut">
+                <div><img src="@/assets/drop-down/logout.png" alt="" /></div>
+                <div>Sign out</div>
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
 

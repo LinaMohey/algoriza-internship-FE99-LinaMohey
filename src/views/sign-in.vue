@@ -1,17 +1,33 @@
 <template>
-  <logo> </logo>
-  <div class="form">
-    <h4>Sign in</h4>
-    <label for="email"></label>
-    <input v-model="email" type="email" id="email" />
-    <label for="password"></label>
-    <input v-model="password" type="password" id="password" />
-    <button @click="submitForm">Sign in</button>
-    <div>
-      <p>Don't have an account?</p>
-      <router-link :to="{ name: 'Register' }"> Register</router-link>
+  <section class="sign-in">
+    <logo class="p-10 mx-50"> </logo>
+    <div class="flex-register-login">
+      <div class="form">
+        <h4 class="title-login-register">Sign in</h4>
+        <label for="email" class="text-sm">Email address</label>
+        <input
+          v-model="email"
+          type="email"
+          id="email"
+          class="input-login-register"
+        />
+        <label for="password" class="text-sm">Password</label>
+        <input
+          v-model="password"
+          type="password"
+          id="password"
+          class="input-login-register"
+        />
+        <button @click="submitForm" class="input-button">Sign in</button>
+        <div class="mt-4 flex items-center">
+          <p class="text-sm mx-1">Don't have an account?</p>
+          <router-link :to="{ name: 'Register' }" class="text-blueColor-100"
+            >Register</router-link
+          >
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

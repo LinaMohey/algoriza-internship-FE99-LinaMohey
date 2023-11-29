@@ -27,6 +27,20 @@ body {
   @apply absolute bottom-25 px-4 text-white;
 }
 
+.title-login-register {
+  @apply text-2xl font-semibold mb-30 text-center;
+}
+
+.flex-register-login {
+  @apply flex items-center justify-center h-screen mx-auto w-400;
+}
+
+.input-login-register {
+  @apply w-full p-2 border mb-4 bg-grayColor-100 outline-none rounded-sm;
+}
+.input-button {
+  @apply w-full bg-blueColor-100 text-white p-2 rounded-md;
+}
 /* .inputs {
   @apply "bg-grayColor-100 py-2 text-grayColor-300 rounded-sm my-2";
 } */
