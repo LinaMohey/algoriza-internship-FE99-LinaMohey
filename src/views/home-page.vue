@@ -5,7 +5,12 @@
     <dream-vacation> </dream-vacation>
     <inspiration-trips> </inspiration-trips>
     <popular-hotels> </popular-hotels>
-    <img src="../assets/download-app/download-app.png" alt="" />
+    <div class="download-app-image my-20">
+      <img
+        src="@/assets/download-app/download-app.png"
+        alt="download-app-image"
+      />
+    </div>
   </home-layout>
 </template>
 

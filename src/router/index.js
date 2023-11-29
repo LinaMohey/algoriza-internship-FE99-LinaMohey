@@ -2,11 +2,14 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/views/home-page.vue";
 import Register from "@/views/register.vue";
 import SignIn from "@/views/sign-in.vue";
+import WelcomeCard from "@/views/welcome-card.vue";
+import hotelResults from "@/views/search-results/hotel-results.vue";
+import hotelAvaliability from "@/views/avaliability/hotel-avalibility.vue";
 
 const routes = [
   {
     path: "/",
-    name: "HomePage",
+    name: "home-page",
     component: HomePage,
   },
   {
@@ -19,15 +22,23 @@ const routes = [
     name: "sign-in",
     component: SignIn,
   },
+  {
+    path: "/welcome",
+    name: "welcome-card",
+    component: WelcomeCard,
+  },
+  {
+    path: "/hotel-result",
+    name: "hotel-results",
+    component: hotelResults,
+  },
 
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  // }
+  {
+    path: "/hotel-availability/:hotelId",
+    name: "hotel-availability",
+    component: hotelAvaliability,
+    props: true, // This allows you to use route params as props in your component
+  },
 ];
 
 const router = createRouter({

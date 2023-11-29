@@ -1,29 +1,28 @@
 <template>
-  <section>
-    <div class="main-layout">
-      <img src="../../assets/main-section/main.png" alt="main-section-image" />
-      <div class="main-text">
+  <main>
+    <div class="main-layout relative">
+      <div>
+        <img
+          src="@/assets/main-section/main.png"
+          class="w-full"
+          alt="main-section-image"
+        />
+      </div>
+
+      <div
+        class="main-text absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white"
+      >
         <h2>Enjoy Your Dream Vacation</h2>
         <p>
           Plan and book our perfect trip with expert advice, travel tips,
           destination information and inspiration from us
         </p>
       </div>
+      <search-form class="absolute top-0"> </search-form>
     </div>
-    <div class="search">
-      <select>
-        <option value="actual value 1">Display Text 1</option>
-        <option value="actual value 2">Display Text 2</option>
-        <option value="actual value 3">Display Text 3</option>
-      </select>
-      <input type="date" name="" id="" />
-      <input type="date" name="" id="" />
-      <input type="number" name="" id="" />
-      <input type="number" name="" id="" />
-
-      <button>Search</button>
-    </div>
-  </section>
+  </main>
 </template>
 
-<script setup></script>
+<script setup>
+import SearchForm from "./search-form.vue";
+</script>

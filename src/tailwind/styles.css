@@ -1,6 +1,13 @@
-
-@import url('https://fonts.cdnfonts.com/css/sf-pro-display?styles=98774,98777,98776,98772,98773,98775,98770,98771,98769');
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display?styles=98774,98777,98776,98772,98773,98775,98770,98771,98769");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.flex-section {
+  @apply flex mb-10 gap-6;
+}
+
+.flex-footer {
+  @apply flex flex-col;
+}
