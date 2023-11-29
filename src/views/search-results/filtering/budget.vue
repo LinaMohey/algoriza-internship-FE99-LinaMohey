@@ -63,19 +63,21 @@
       </label>
     </div>
 
-    <div class="border border-dashed border-grayColor-500 p-2 m-4 rounded-md">
+    <div
+      class="border border-dashed border-grayColor-500 p-2 m-4 rounded-md text-xs text-grayColor-600"
+    >
       <input
-        class="outline-none mb-2 border border-grayColor-100 mx-3 p-3 rounded-md"
+        class="outline-none mb-2 border border-grayColor-100 mx-3 p-3 rounded-md w-103"
         v-model="minBudget"
         type="number"
-        placeholder="Min Budget"
+        placeholder="Min budget"
         :disabled="!showCustomBudget"
       />
       <input
-        class="outline-none mb-2 border border-grayColor-100 rounded-md p-3"
+        class="outline-none mb-2 border border-grayColor-100 rounded-md p-3 w-103"
         v-model="maxBudget"
         type="number"
-        placeholder="Max Budget"
+        placeholder="Max budget"
         @keyup.enter="setCustomBudget"
         :disabled="!showCustomBudget"
       />

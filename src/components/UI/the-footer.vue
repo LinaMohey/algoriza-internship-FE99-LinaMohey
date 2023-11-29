@@ -1,14 +1,10 @@
 <template>
   <footer>
-    <div class="main-container">
-      <div class="main-text text-center">
-        <h3>Explore the world with My Dream place</h3>
-        <h4 class="text-blue mb-20">Discover new places and experiences</h4>
-      </div>
-      <div class="footer-links flex gap-48">
+    <div class="main-container m-50">
+      <div class="footer-links flex gap-48 justify-between mx-2">
         <div class="logo">
           <logo></logo>
-          <p>Your next goto companion for <br />travel</p>
+          <p class="mt-2">Your next goto companion for <br />travel</p>
         </div>
         <div class="company-link">
           <h4>Company</h4>
@@ -57,7 +53,7 @@
     <div
       class="copy-right bg-grayColor-200 text-grayColor-300 text-right px-4 mt-20"
     >
-      <p class="relative right-20 py-1">&copy; my Dream Place 2022</p>
+      <p class="relative right-100 py-2">&copy; my Dream Place 2022</p>
     </div>
   </footer>
 </template>

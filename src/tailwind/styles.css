@@ -8,7 +8,7 @@ body {
 }
 
 .flex-section {
-  @apply flex mb-10 gap-6;
+  @apply flex mb-10 gap-48;
 }
 
 .flex-footer {
@@ -21,6 +21,10 @@ body {
 
 .filter-title {
   @apply bg-grayColor-100 p-18 rounded-tl-md rounded-tr-md mb-4 border border-grayColor-400;
+}
+
+.inspiration-section {
+  @apply absolute bottom-25 px-4 text-white;
 }
 
 /* .inputs {

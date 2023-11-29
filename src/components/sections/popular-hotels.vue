@@ -1,6 +1,6 @@
 <template>
   <section class="popular-hotels">
-    <div class="main-text mb-4">
+    <div class="main-text mb-4 mt-50">
       <h2>Popular Hotels</h2>
     </div>
     <div class="popular-hotels-info flex-section">

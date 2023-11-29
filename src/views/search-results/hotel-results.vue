@@ -1,7 +1,7 @@
 <template>
   <header class="relative">
     <navbar
-      class="bg-gradient-to-r from-blueColor-200 via-blueColor-200 to-blueColor-300 h-50 text-white"
+      class="bg-gradient-to-r from-blueColor-200 via-blueColor-200 to-blueColor-300 h-200 text-white"
     ></navbar>
     <div class="search absolute -bottom-4 left-80 shadow-md">
       <form class="bg-white my-auto rounded-md p-2">
@@ -22,52 +22,54 @@
   </header>
 
   <section
-    class="main-container max-w-screen-xl mx-auto mt-12 flex justify-evenly gap-48"
+    class="main-container max-w-1350 mx-auto mt-12 flex gap-20 justify-center"
   >
-    <!-- Search by property -->
-    <div class="search-by-property rounded-md bg-grayColor-100 p-4 h-full">
-      <p class="font-semibold mb-4">Search by property name</p>
+    <div class="main-filter w-295">
+      <!-- Search by property -->
       <div
-        class="search-input flex items-center border-1 border-grayColor-400 rounded-md p-2 bg-white py-3"
+        class="search-by-property rounded-md bg-grayColor-100 p-4 items-center"
       >
-        <div class="input-search">
-          <img src="@/assets/search.png" alt="Search Icon" />
+        <p class="font-semibold mb-4">Search by property name</p>
+        <div
+          class="search-input flex items-center border-1 border-grayColor-400 rounded-md p-2 bg-white py-3"
+        >
+          <div class="input-search">
+            <img src="@/assets/search.png" alt="Search Icon" />
+          </div>
+          <input
+            class="flex-1 ml-2 outline-none bg-transparent text-grayColor-300"
+            type="text"
+            v-model="propertyName"
+            placeholder="e.g., Beach westpalm"
+          />
         </div>
-        <input
-          class="flex-1 ml-2 outline-none bg-transparent text-grayColor-300"
-          type="text"
-          v-model="propertyName"
-          placeholder="e.g., Beach westpalm"
-        />
       </div>
-    </div>
 
-    <!--  Filtering -->
-    <div class="filtering">
-      <h4 class="m-4">Filter by</h4>
+      <div class="filtering">
+        <h4 class="m-4">Filter by</h4>
 
-      <!-- Filter by Budget -->
-      <filter-by-budget> </filter-by-budget>
+        <!-- Filter by Budget -->
+        <filter-by-budget> </filter-by-budget>
 
-      <!-- Search by rating -->
-      <div class="search-by-ratings border border-grayColor-400 rounded-md">
-        <h4 class="filter-title">Rating</h4>
-        <p class="mb-2 px-4">Show only ratings more than</p>
-        <div class="rating-search-container flex px-4">
-          <div
-            class="rating-search flex gap-2 items-center border p-2 mb-6"
-            v-for="rating in [1, 2, 3, 4, 5]"
-            :key="rating"
-          >
-            <div><img src="@/assets/stars.png" alt="" /></div>
-            <button class="rating-button" @click="updateRating(rating)">
-              {{ rating }}
-            </button>
+        <!-- Search by rating -->
+        <div class="search-by-ratings border border-grayColor-400 rounded-md">
+          <h4 class="filter-title">Rating</h4>
+          <p class="mb-2 px-4">Show only ratings more than</p>
+          <div class="rating-search-container flex px-4">
+            <div
+              class="rating-search flex gap-2 items-center border p-2 mb-6"
+              v-for="rating in [1, 2, 3, 4, 5]"
+              :key="rating"
+            >
+              <div><img src="@/assets/stars.png" alt="" /></div>
+              <button class="rating-button" @click="updateRating(rating)">
+                {{ rating }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Hotel results -->
     <div class="search-results m-10">
       <div class="desination-info flex justify-between m-6">
@@ -88,7 +90,7 @@
           <img
             :src="hotel.property.photoUrls"
             alt="hotel image"
-            class="rounded-md w-285 h-50"
+            class="rounded-md w-285 h-200"
           />
         </div>
         <div class="hotel-info">

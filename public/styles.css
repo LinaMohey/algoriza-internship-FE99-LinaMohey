@@ -557,7 +557,7 @@ video {
 }
 
 .left-50{
-  left: 200px;
+  left: 50px;
 }
 
 .left-80{
@@ -568,8 +568,8 @@ video {
   right: 0px;
 }
 
-.right-20{
-  right: 20px;
+.right-100{
+  right: 100px;
 }
 
 .top-1\/2{
@@ -578,10 +578,6 @@ video {
 
 .top-4{
   top: 1rem;
-}
-
-.top-6{
-  top: 1.5rem;
 }
 
 .z-50{
@@ -594,6 +590,10 @@ video {
 
 .m-4{
   margin: 1rem;
+}
+
+.m-50{
+  margin: 50px;
 }
 
 .m-6{
@@ -613,6 +613,11 @@ video {
 .mx-3{
   margin-left: 0.75rem;
   margin-right: 0.75rem;
+}
+
+.mx-60{
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .mx-auto{
@@ -686,6 +691,10 @@ video {
   margin-top: 1rem;
 }
 
+.mt-50{
+  margin-top: 50px;
+}
+
 .mt-8{
   margin-top: 2rem;
 }
@@ -698,24 +707,40 @@ video {
   display: flex;
 }
 
-.h-50{
+.h-200{
   height: 200px;
 }
 
-.h-full{
-  height: 100%;
+.w-103{
+  width: 103px;
+}
+
+.w-1350{
+  width: 1350px;
 }
 
 .w-285{
   width: 285px;
 }
 
+.w-295{
+  width: 295px;
+}
+
+.w-400{
+  width: 400px;
+}
+
 .w-full{
   width: 100%;
 }
 
-.max-w-screen-xl{
-  max-width: 1280px;
+.min-w-400{
+  min-width: 400px;
+}
+
+.max-w-1350{
+  max-width: 1350px;
 }
 
 .flex-1{
@@ -750,10 +775,6 @@ video {
 
 .justify-between{
   justify-content: space-between;
-}
-
-.justify-evenly{
-  justify-content: space-evenly;
 }
 
 .justify-items-center{
@@ -869,6 +890,10 @@ video {
   --tw-gradient-to: #144E9D var(--tw-gradient-to-position);
 }
 
+.p-10{
+  padding: 10px;
+}
+
 .p-2{
   padding: 0.5rem;
 }
@@ -953,6 +978,11 @@ video {
   color: rgb(224 224 224 / var(--tw-text-opacity));
 }
 
+.text-grayColor-600{
+  --tw-text-opacity: 1;
+  color: rgb(51 51 51 / var(--tw-text-opacity));
+}
+
 .text-red-500{
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -1003,7 +1033,7 @@ body {
 .flex-section{
   margin-bottom: 10px;
   display: flex;
-  gap: 1.5rem;
+  gap: 48px;
 }
 
 .flex-footer{
@@ -1035,6 +1065,15 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(242 242 242 / var(--tw-bg-opacity));
   padding: 18px;
+}
+
+.inspiration-section{
+  position: absolute;
+  bottom: 25px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 /* .inputs {

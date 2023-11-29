@@ -1,7 +1,7 @@
 <template>
   <section class="vacations">
     <div class="main-text">
-      <h2 class="my=2">Enjoy Your Dream Vacation</h2>
+      <h2 class="my-2">Enjoy Your Dream Vacation</h2>
       <p class="my-2">
         Plan and book our perfect trip with expert advice, travel tips,
         destination information and inspiration from us

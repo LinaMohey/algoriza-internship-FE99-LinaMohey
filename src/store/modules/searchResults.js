@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const useSearchResultStore = defineStore("searchResult", {
   state: () => ({
-    APIkey: "e9503fb4aemshac3c85ed12de3ap15fdf4jsn87b33658df9e",
+    APIkey: "e9503fb4aemshacc85ed12de3ap15fdf4jsn87b33658df9e",
     destinations: [],
     hotels: [],
     selectedDestination: null,

@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="flex justify-between items-center p-4">
+    <div class="flex justify-between items-center p-5 mx-60 my-10">
       <logo></logo>
 
       <!-- Navigation Links -->
@@ -40,7 +40,7 @@
       <router-link
         v-else
         :to="{ name: 'sign-in' }"
-        class="bg-blueColor text-white rounded-md px-3 py-1"
+        class="bg-blueColor-100 text-white rounded-md px-3 py-1"
         >Login</router-link
       >
     </div>

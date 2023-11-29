@@ -1,6 +1,6 @@
 <template>
   <navbar> </navbar>
-  <div class="max-w-screen-xl mx-auto">
+  <div class="max-w-1350 mx-auto">
     <slot></slot>
   </div>
   <the-footer> </the-footer>
