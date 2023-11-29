@@ -18,7 +18,7 @@
           destination information and inspiration from us
         </p>
       </div>
-      <search-form class="absolute top-0"> </search-form>
+      <search-form class="absolute -bottom-4 left-50 shadow-lg"> </search-form>
     </div>
   </main>
 </template>

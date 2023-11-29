@@ -1,7 +1,7 @@
 <!-- components/SearchForm.vue -->
 <template>
   <div class="search" v-if="!loading">
-    <form @submit.prevent="search" class="bg-white my-3 rounded-md">
+    <form @submit.prevent="search" class="bg-white my-auto rounded-md p-2">
       <label for="destination">Destination:</label>
       <select v-model="selectedDestination" id="destination">
         <option
@@ -14,15 +14,35 @@
       </select>
 
       <input
-        class="bg-grayColor-100 py-2 mx-10 text-grayColor-300 rounded-sm my-2"
+        class="bg-grayColor-100 py-2 text-grayColor-300 rounded-sm my-1 mx-10"
         v-model="checkIn"
         type="date"
         placeholder="Check-in Date"
       />
-      <input v-model="checkOut" type="date" placeholder="Check-out Date" />
-      <input v-model="rooms" type="number" placeholder="Number of rooms" />
-      <input v-model="guests" type="number" placeholder="Number of guests" />
-      <button type="submit">Search</button>
+      <input
+        class="bg-grayColor-100 py-2 text-grayColor-300 rounded-sm my-1 mx-10"
+        v-model="checkOut"
+        type="date"
+        placeholder="Check-out Date"
+      />
+      <input
+        class="bg-grayColor-100 py-2 text-grayColor-300 rounded-sm my-1 mx-10"
+        v-model="rooms"
+        type="number"
+        placeholder="Number of rooms"
+      />
+      <input
+        class="bg-grayColor-100 py-2 text-grayColor-300 rounded-sm my-1 mx-10"
+        v-model="guests"
+        type="number"
+        placeholder="Number of guests"
+      />
+      <button
+        class="bg-blueColor px-35 py-2 text-white rounded-md"
+        type="submit"
+      >
+        Search
+      </button>
     </form>
   </div>
   <div v-else>Loading.....</div>

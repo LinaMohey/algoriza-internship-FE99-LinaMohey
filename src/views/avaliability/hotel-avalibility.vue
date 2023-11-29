@@ -140,7 +140,7 @@
 <script setup>
 // Access route params as props
 import { useSearchResultStore } from "@/store/modules/searchResults";
-import { onBeforeMount, onMounted } from "vue";
+import { onMounted } from "vue";
 
 const props = defineProps(["hotelId"]);
 const searchResultStore = useSearchResultStore();
@@ -151,12 +151,9 @@ const room_id = hotelDetails.block[0].room_id;
 
 const selectedHotel = searchResultStore.selectedHotel;
 
-onBeforeMount(() => {
+onMounted(() => {
   searchResultStore.setHotelId(props.hotelId);
 
-  // Update the store with the hotelId
-});
-onMounted(() => {
   searchResultStore.fetchDetails();
 });
 </script>

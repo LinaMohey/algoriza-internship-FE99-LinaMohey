@@ -11,3 +11,7 @@
 .flex-footer {
   @apply flex flex-col;
 }
+
+/* .inputs {
+  @apply "bg-grayColor-100 py-2 text-grayColor-300 rounded-sm my-2";
+} */

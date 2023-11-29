@@ -10,7 +10,12 @@ module.exports = {
         body: ["SF Pro Display", "sans-serif"],
       },
       spacing: {
+        10: "10px",
+        18: "18px",
+        30: "30px",
+        35: "35px",
         48: "48px",
+        50: "200px",
       },
       width: {
         1260: "1260px",
