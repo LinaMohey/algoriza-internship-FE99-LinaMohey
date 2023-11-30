@@ -584,8 +584,20 @@ video {
   z-index: 50;
 }
 
+.row-span-2{
+  grid-row: span 2 / span 2;
+}
+
 .m-10{
   margin: 10px;
+}
+
+.m-15{
+  margin: 15px;
+}
+
+.m-20{
+  margin: 20px;
 }
 
 .m-4{
@@ -620,14 +632,19 @@ video {
   margin-right: 0.75rem;
 }
 
+.mx-4{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mx-5{
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .mx-50{
   margin-left: 50px;
   margin-right: 50px;
-}
-
-.mx-60{
-  margin-left: 60px;
-  margin-right: 60px;
 }
 
 .mx-auto{
@@ -655,6 +672,16 @@ video {
   margin-bottom: 20px;
 }
 
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-40{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .my-8{
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -665,12 +692,24 @@ video {
   margin-bottom: auto;
 }
 
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+
+.mb-100{
+  margin-bottom: 100px;
+}
+
 .mb-2{
   margin-bottom: 0.5rem;
 }
 
 .mb-20{
   margin-bottom: 20px;
+}
+
+.mb-30{
+  margin-bottom: 30px;
 }
 
 .mb-4{
@@ -689,8 +728,24 @@ video {
   margin-left: 0.5rem;
 }
 
+.mr-2{
+  margin-right: 0.5rem;
+}
+
+.mt-1{
+  margin-top: 0.25rem;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
 .mt-12{
-  margin-top: 3rem;
+  margin-top: 12px;
+}
+
+.mt-15{
+  margin-top: 15px;
 }
 
 .mt-2{
@@ -701,8 +756,16 @@ video {
   margin-top: 20px;
 }
 
+.mt-35{
+  margin-top: 35px;
+}
+
 .mt-4{
   margin-top: 1rem;
+}
+
+.mt-5{
+  margin-top: 1.25rem;
 }
 
 .mt-50{
@@ -721,8 +784,20 @@ video {
   display: flex;
 }
 
+.grid{
+  display: grid;
+}
+
 .h-200{
   height: 200px;
+}
+
+.h-6{
+  height: 1.5rem;
+}
+
+.h-full{
+  height: 100%;
 }
 
 .w-103{
@@ -745,16 +820,44 @@ video {
   width: 400px;
 }
 
+.w-6{
+  width: 1.5rem;
+}
+
 .w-full{
   width: 100%;
+}
+
+.min-w-150{
+  min-width: 150px;
+}
+
+.min-w-240{
+  min-width: 240px;
+}
+
+.min-w-338{
+  min-width: 338px;
 }
 
 .min-w-400{
   min-width: 400px;
 }
 
+.min-w-500{
+  min-width: 500px;
+}
+
 .max-w-1350{
   max-width: 1350px;
+}
+
+.max-w-60{
+  max-width: 60px;
+}
+
+.max-w-810{
+  max-width: 810px;
 }
 
 .max-w-md{
@@ -783,6 +886,14 @@ video {
   cursor: pointer;
 }
 
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-rows-2{
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
 .items-center{
   align-items: center;
 }
@@ -793,6 +904,10 @@ video {
 
 .justify-between{
   justify-content: space-between;
+}
+
+.justify-evenly{
+  justify-content: space-evenly;
 }
 
 .justify-items-center{
@@ -807,12 +922,20 @@ video {
   gap: 20px;
 }
 
+.gap-3{
+  gap: 0.75rem;
+}
+
 .gap-4{
   gap: 1rem;
 }
 
 .gap-48{
   gap: 48px;
+}
+
+.self-center{
+  align-self: center;
 }
 
 .rounded{
@@ -823,8 +946,24 @@ video {
   border-radius: 0.375rem;
 }
 
+.rounded-sm{
+  border-radius: 0.125rem;
+}
+
+.rounded-tl-md{
+  border-top-left-radius: 0.375rem;
+}
+
+.rounded-tr-md{
+  border-top-right-radius: 0.375rem;
+}
+
 .border{
   border-width: 1px;
+}
+
+.border-t{
+  border-top-width: 1px;
 }
 
 .border-solid{
@@ -833,6 +972,11 @@ video {
 
 .border-dashed{
   border-style: dashed;
+}
+
+.border-gray-300{
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .border-grayColor-100{
@@ -850,6 +994,11 @@ video {
   border-color: rgb(217 217 217 / var(--tw-border-opacity));
 }
 
+.border-b-blueColor-100{
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(47 128 237 / var(--tw-border-opacity));
+}
+
 .bg-blueColor-100{
   --tw-bg-opacity: 1;
   background-color: rgb(47 128 237 / var(--tw-bg-opacity));
@@ -863,6 +1012,11 @@ video {
 .bg-grayColor-200{
   --tw-bg-opacity: 1;
   background-color: rgb(235 235 235 / var(--tw-bg-opacity));
+}
+
+.bg-green-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(133 224 171 / var(--tw-bg-opacity));
 }
 
 .bg-orange-500{
@@ -887,6 +1041,11 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 201 76 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r{
@@ -916,8 +1075,16 @@ video {
   padding: 0.5rem;
 }
 
+.p-20{
+  padding: 20px;
+}
+
 .p-3{
   padding: 0.75rem;
+}
+
+.p-30{
+  padding: 30px;
 }
 
 .p-4{
@@ -930,6 +1097,11 @@ video {
 
 .p-8{
   padding: 2rem;
+}
+
+.px-12{
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .px-18{
@@ -962,11 +1134,6 @@ video {
   padding-right: 1rem;
 }
 
-.px-40{
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -982,6 +1149,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-20{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -995,6 +1167,11 @@ video {
   text-align: right;
 }
 
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1003,6 +1180,10 @@ video {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.font-medium{
+  font-weight: 500;
 }
 
 .font-semibold{
@@ -1052,6 +1233,12 @@ video {
 .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-sm{
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1158,6 +1345,33 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(47 128 237 / var(--tw-bg-opacity));
   padding: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.reservation-input{
+  margin-top: 0.25rem;
+  border-start-start-radius: 0.25rem;
+  border-end-start-radius: 0.25rem;
+  border-width: 1px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  outline-color: #2F80ED;
+}
+
+.reservation-card{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top-right-radius: 0.375rem;
+  border-top-left-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(47 128 237 / var(--tw-bg-opacity));
+  padding: 1rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }

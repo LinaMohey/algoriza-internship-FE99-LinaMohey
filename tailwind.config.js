@@ -11,6 +11,8 @@ module.exports = {
       },
       spacing: {
         10: "10px",
+        11: "11px",
+        12: "12px",
         15: "15px",
         18: "18px",
         20: "20px",
@@ -32,6 +34,9 @@ module.exports = {
         295: "295px",
         400: "400px",
         1350: "1350px",
+        150: "150px",
+        240: "240px",
+        338: "338px",
       },
       height: {
         200: "200px",
@@ -40,17 +45,29 @@ module.exports = {
         374: "374px",
       },
       minWidth: {
+        150: "150px",
+        240: "240px",
+        338: "338px",
         400: "400px",
+        500: "500px",
       },
       maxWidth: {
+        60: "60px",
         1350: "1350px",
+        810: "810px",
       },
 
       colors: {
+        green: {
+          100: "#85E0AB",
+        },
         blueColor: {
           100: "#2F80ED",
           200: "#2969BF",
           300: "#144E9D",
+        },
+        yellow: {
+          100: "#F2C94C",
         },
         grayColor: {
           100: "#F2F2F2",
@@ -59,6 +76,7 @@ module.exports = {
           400: "#E0E0E0",
           500: "#D9D9D9",
           600: "#333333",
+          700: "#F4F4F4",
         },
         warning: "#FCEFCA",
       },

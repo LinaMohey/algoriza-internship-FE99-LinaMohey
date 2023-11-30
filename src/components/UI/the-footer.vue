@@ -7,8 +7,8 @@
           <p class="mt-2">Your next goto companion for <br />travel</p>
         </div>
         <div class="company-link">
-          <h4>Company</h4>
-          <div class="flex-footer">
+          <h4 class="mb-2">Company</h4>
+          <div class="flex-footer mb-1">
             <a href="#">About</a>
             <a href="#">Jobs</a>
             <a href="#">Newsroom</a>
@@ -18,8 +18,8 @@
         </div>
 
         <div class="explore-link">
-          <h4>Explore</h4>
-          <div class="flex-footer">
+          <h4 class="mb-2">Explore</h4>
+          <div class="flex-footer mb-1">
             <a href="#">Australia</a>
             <a href="#">New Zealand</a>
             <a href="#">United States America (USA)</a>
@@ -30,8 +30,8 @@
           </div>
         </div>
         <div class="policies-link">
-          <h4>Terms and Policies</h4>
-          <div class="flex-footer">
+          <h4 class="mb-2">Terms and Policies</h4>
+          <div class="flex-footer mb-1">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of use</a>
             <a href="#">Acessibility</a>
@@ -39,8 +39,8 @@
           </div>
         </div>
         <div class="support-link">
-          <h4>Help and Support</h4>
-          <div class="flex-footer">
+          <h4 class="mb-2">Help and Support</h4>
+          <div class="flex-footer mb-1">
             <a href="#">Support</a>
             <a href="#">Cancel your bookings</a>
             <a href="#">Use Coupon</a>

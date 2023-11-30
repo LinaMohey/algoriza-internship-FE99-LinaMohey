@@ -5,6 +5,7 @@ import SignIn from "@/views/sign-in.vue";
 import WelcomeCard from "@/views/welcome-card.vue";
 import hotelResults from "@/views/search-results/hotel-results.vue";
 import hotelAvaliability from "@/views/avaliability/hotel-avalibility.vue";
+import Reservation from "@/views/reservation.vue";
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     name: "hotel-availability",
     component: hotelAvaliability,
     props: true, // This allows you to use route params as props in your component
+  },
+  {
+    path: "/reservation/",
+    name: "reservation",
+    component: Reservation,
   },
 ];
 
