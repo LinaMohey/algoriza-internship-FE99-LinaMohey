@@ -37,7 +37,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { useAuthStore } from "@/store/modules/auth";
+import { useAuthStore } from "@/views/authentication/store/auth";
 import { useRouter } from "vue-router";
 
 const email = ref("");
@@ -61,3 +61,4 @@ const submitForm = async () => {
   }
 };
 </script>
+@/views/authentication/store/auth

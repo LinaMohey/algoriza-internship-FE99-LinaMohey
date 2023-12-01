@@ -78,10 +78,9 @@
 <script setup>
 import { ref } from "vue";
 import { computed } from "vue";
-import { useAuthStore } from "@/store/modules/auth";
+import { useAuthStore } from "@/views/authentication/store/auth";
 
 const authStore = useAuthStore();
-
 const isLoggedIn = computed(() => authStore.isAuthenticated);
 
 const showDropdown = ref(false);
@@ -96,3 +95,4 @@ const signOut = () => {
   // You can add additional logic or emit events if needed
 };
 </script>
+@/views/authentication/store/auth

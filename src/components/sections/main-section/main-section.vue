@@ -20,5 +20,5 @@
 </template>
 
 <script setup>
-import SearchForm from "../search/search-form.vue";
+import SearchForm from "@/components/search/search-form.vue";
 </script>

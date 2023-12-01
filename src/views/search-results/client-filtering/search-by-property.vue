@@ -1,4 +1,5 @@
 <template>
+  <!-- search by property name -->
   <section
     class="search-by-property rounded-md bg-grayColor-100 p-4 items-center"
   >
@@ -26,6 +27,7 @@ import { ref } from "vue";
 const propertyName = ref("");
 const emit = defineEmits();
 
+//sending property name
 const searchByPropertyName = () => {
   emit("updateByPropertyName", propertyName.value);
 };

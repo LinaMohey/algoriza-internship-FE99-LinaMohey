@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const useSearchResultStore = defineStore("searchResult", {
   state: () => ({
-    APIkey: "0f649fe448mshde22b78fa8ed203p1cc218jsn742319822e4a",
+    APIkey: "ddc8a903bamsh7200717e4f75974p1d345djsnbfecfa51a645",
     destinations: [],
     hotels: [],
     selectedDestination: null,
@@ -46,6 +46,7 @@ export const useSearchResultStore = defineStore("searchResult", {
       }
     },
 
+    //searching for hotels on specific destinations
     async searchHotels(
       destinationId,
       checkIn,
@@ -85,11 +86,12 @@ export const useSearchResultStore = defineStore("searchResult", {
       }
     },
 
-    // Set form data
+    // Set the form data (getting from use) to the state to use
     setFormData(data) {
       this.form = { ...this.form, ...data };
     },
 
+    //fetching sort options to filter
     async fetchSortOptions() {
       try {
         const response = await axios.get(
@@ -120,6 +122,7 @@ export const useSearchResultStore = defineStore("searchResult", {
     setSelectedSortOption(optionId) {
       this.selectedSortOption = optionId;
 
+      //search again by the filtered options
       this.searchHotels(
         this.form.selectedDestination,
         this.form.checkIn,
@@ -145,7 +148,6 @@ export const useSearchResultStore = defineStore("searchResult", {
         this.form.minBudget,
         this.form.maxBudget
       );
-      // console.log(this.hotels.length);
     },
 
     getHotelCountInBudget(min, max) {
@@ -153,6 +155,11 @@ export const useSearchResultStore = defineStore("searchResult", {
         const price = hotel.property.priceBreakdown.grossPrice.value;
         return price >= min && price <= max;
       }).length;
+    },
+
+    //setting rating
+    setRating(rate) {
+      this.rating = rate;
     },
 
     //fetching hotel details
@@ -181,15 +188,9 @@ export const useSearchResultStore = defineStore("searchResult", {
       }
     },
 
-    //set the hotel id
+    //setting hotel id to fetch the rooms specific to it
     setHotelId(hotel_id) {
       this.selectedHotel = hotel_id;
-    },
-
-    //setting rating
-
-    setRating(rate) {
-      this.rating = rate;
     },
   },
 });

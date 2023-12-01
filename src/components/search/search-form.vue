@@ -41,7 +41,7 @@
 import { computed, ref, onMounted, watchEffect } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
-import { useSearchResultStore } from "@/store/modules/searchResults";
+import { useSearchResultStore } from "@/views/search-results/store/searchResults";
 import destinationSelection from "./destination-selection.vue";
 import dateInputs from "./date-inputs.vue";
 
@@ -140,3 +140,4 @@ const search = async () => {
   }
 };
 </script>
+@/views/search-results/store/searchResults

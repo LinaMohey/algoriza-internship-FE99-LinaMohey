@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/views/home-page.vue";
-import Register from "@/views/register.vue";
-import SignIn from "@/views/sign-in.vue";
+import Register from "@/views/authentication/register.vue";
+import SignIn from "@/views/authentication/sign-in.vue";
 import WelcomeCard from "@/views/welcome-card.vue";
 import hotelResults from "@/views/search-results/hotel-results.vue";
-import hotelAvaliability from "@/views/avaliability/hotel-avalibility.vue";
-import Reservation from "@/views/reservation.vue";
-import { useAuthStore } from "@/store/modules/auth";
+import hotelAvaliability from "@/views/hotel-avaliability/hotel-avalibility.vue";
+import Reservation from "@/views/hotel-reservation/reservation.vue";
+import { useAuthStore } from "@/views/authentication/store/auth";
 
 const routes = [
   {

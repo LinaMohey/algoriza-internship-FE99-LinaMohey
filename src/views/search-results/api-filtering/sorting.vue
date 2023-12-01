@@ -1,6 +1,6 @@
 <template>
-  <!-- Sort by -->
-  <div class="sort-by">
+  <!-- sorting hotels by -->
+  <section class="sort-by">
     <select v-model="selectedSort">
       <option value="">
         Sort by <br />
@@ -14,18 +14,20 @@
         {{ sortOption.title }}
       </option>
     </select>
-  </div>
+  </section>
 </template>
+
 <script setup>
-import { useSearchResultStore } from "@/store/modules/searchResults";
+import { useSearchResultStore } from "@/views/search-results/store/searchResults";
 import { ref, computed, watchEffect } from "vue";
 
 const searchResultStore = useSearchResultStore();
-
 const sortOptions = computed(() => searchResultStore.sortOptions);
 const selectedSort = ref("");
 
+// watch for changes in selected sort option
 watchEffect(() => {
   searchResultStore.setSelectedSortOption(selectedSort.value);
 });
 </script>
+@/views/search-results/store/searchResults

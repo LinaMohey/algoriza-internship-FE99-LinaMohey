@@ -1,17 +1,21 @@
 <template>
+  <!-- header section -->
   <header class="relative">
+    <!-- navigation bar -->
     <navbar
       class="bg-gradient-to-r from-blueColor-200 via-blueColor-200 to-blueColor-300 h-200 text-white shadow-none"
     ></navbar>
+
+    <!-- search form -->
     <div class="search absolute -bottom-4 left-80 shadow-md">
       <form class="bg-white my-auto rounded-md p-2">
+        <!-- destination dropdown -->
         <label for="destination">Destination:</label>
         <select>
-          <option>
-            {{ selectedDestination }}
-          </option>
+          <option>{{ selectedDestination }}</option>
         </select>
 
+        <!-- date inputs, rooms, guests, and search button -->
         <input class="input" :value="checkIn" type="date" />
         <input class="input" :value="checkOut" type="date" />
         <input class="input" :value="rooms" type="number" />
@@ -21,79 +25,63 @@
     </div>
   </header>
 
+  <!-- main section -->
   <section
     class="main-container max-w-1350 mx-auto mt-12 flex gap-20 justify-center"
   >
+    <!-- filter sidebar -->
     <div class="main-filter w-295">
-      <!-- Search by property -->
-      <search-by-property @updateByPropertyName="handlePropertyName">
-      </search-by-property>
+      <!-- search by property -->
+      <search-by-property
+        @updateByPropertyName="handlePropertyName"
+      ></search-by-property>
 
-      <!-- Filters -->
+      <!-- filters -->
       <div class="filtering">
         <h4 class="m-4">Filter by</h4>
 
-        <!-- Filter by Budget -->
-        <filter-by-budget> </filter-by-budget>
+        <!-- filter by budget -->
+        <filter-by-budget></filter-by-budget>
 
-        <!-- Filter by rating -->
-        <filter-by-rating @updateRating="handleUpdateRating">
-        </filter-by-rating>
+        <!-- filter by rating -->
+        <filter-by-rating @updateRating="handleUpdateRating"></filter-by-rating>
       </div>
     </div>
 
-    <!-- Hotel results -->
+    <!-- hotel results -->
     <div class="search-results m-10">
+      <!-- destination information and sorting -->
       <div class="desination-info flex justify-between m-6">
         <p>
-          {{ selectedDestination }} : {{ filteredHotels.length }}
-          search results found
+          {{ selectedDestination }} : {{ filteredHotels.length }} search results
+          found
         </p>
-        <!-- Sort by -->
-        <filter-by-sort> </filter-by-sort>
+
+        <!-- sort by filter -->
+        <filter-by-sort></filter-by-sort>
       </div>
 
+      <!-- hotel listings -->
       <div
         v-for="hotel in filteredHotels"
         :key="hotel.property.id"
         class="flex gap-20 border border-grayColor-400 p-3 mb-4 relative"
       >
-        <div class="hotel-image">
-          <img
-            :src="hotel.property.photoUrls"
-            alt="hotel image"
-            class="rounded-md w-285 h-200"
-          />
-        </div>
+        <!-- hotel image -->
+        <hotel-image :hotel="hotel"></hotel-image>
+
+        <!-- hotel info -->
         <div class="hotel-info">
-          <h3 class="my-15">{{ hotel.property.name }}</h3>
-          <div class="ratings flex gap-">
-            <img
-              v-for="index in Math.floor(formatRate(hotel))"
-              src="@/assets/star-fill.png"
-              :key="index"
-              alt="filled-star"
-            />
+          <!-- property name -->
+          <property-name :hotel="hotel"></property-name>
 
-            <img
-              v-if="hotel.property.reviewScore % 1 !== 0"
-              src="@/assets/star-half.png"
-              alt="half-filled "
-            />
+          <!-- hotel ratings -->
+          <hotel-ratings :hotel="hotel"></hotel-ratings>
 
-            <p>
-              {{ formatRate(hotel) }} ({{ hotel.property.reviewCount }}
-              Reviews)
-            </p>
-          </div>
+          <!-- hotel description -->
+          <hotel-description></hotel-description>
 
-          <div class="description py-10 my-10">
-            <h4>Live a little and celbrate with champagne</h4>
-            <p>
-              Reats include a glass of French champagne, parking and a late
-              <br />checkout. Gym included. Flexible cancellation applies
-            </p>
-          </div>
+          <!-- availability button -->
           <router-link
             class="bg-blueColor-100 text-white border border-grayColor-400 py-10 px-18 rounded-md my-20"
             :to="{
@@ -106,36 +94,14 @@
             See availability
           </router-link>
         </div>
+
+        <!-- hotel price -->
         <div class="hotel-price">
-          <!-- Badge -->
-          <p
-            v-if="hasBenefitBadges(hotel)"
-            class="absolute top-4 right-0 text-white py-1 px-2 rounded-md mx-10"
-            :class="{
-              'bg-red-500': isLimitedTimeDeal(hotel),
-              'bg-orange-500': !isLimitedTimeDeal(hotel),
-            }"
-          >
-            {{ getBenefitBadges(hotel) }}
-          </p>
+          <!-- hotel benefits -->
+          <hotel-benefits :hotel="hotel"></hotel-benefits>
 
-          <!-- Price -->
-          <div
-            class="price-breakdown flex items-center gap-2 absolute bottom-4 right-0 px-3"
-          >
-            <p
-              v-if="hasStrikethroughPrice(hotel)"
-              :class="{
-                'line-through text-xs': hasStrikethroughPrice(hotel),
-                'text-red-500 ': hasStrikethroughPrice(hotel),
-              }"
-            >
-              {{ getStrikethroughPrice(hotel) }}
-            </p>
-            <p>{{ formatPrice(hotel) }}</p>
-
-            <p v-if="hasTaxExceptions(hotel)">Price Includes Taxes and Fees</p>
-          </div>
+          <!-- gross price -->
+          <hotel-price :hotel="hotel"></hotel-price>
         </div>
       </div>
     </div>
@@ -143,22 +109,28 @@
 </template>
 
 <script setup>
-import FilterByBudget from "./api-filtering/budget.vue";
+import filterByBudget from "./api-filtering/budget.vue";
 import filterBySort from "./api-filtering/sorting.vue";
 import filterByRating from "./client-filtering/filter-by-rating.vue";
 import searchByProperty from "./client-filtering/search-by-property.vue";
-import { useSearchResultStore } from "@/store/modules/searchResults";
+import hotelName from "./hotel-details/property-name.vue";
+import hotelImage from "./hotel-details/hotel-image.vue";
+import hotelRatings from "./hotel-details/hotel-ratings.vue";
+import hotelDescription from "./hotel-details/hotel-description.vue";
+import hotelBenefits from "./hotel-details/hotel-benefits.vue";
+import hotelPrice from "./hotel-details/hotel-price.vue";
+
+import { useSearchResultStore } from "@/views/search-results/store/searchResults";
 import { computed, onMounted, ref } from "vue";
 import navbar from "@/components/UI/navbar.vue";
 
 const searchResultStore = useSearchResultStore();
 
-//fetching the options once the component is mounted
+// fetching the options once the component is mounted
 onMounted(async () => {
   await searchResultStore.fetchSortOptions();
 });
 
-//getting the store data and make it reactive also locally.
 const hotels = searchResultStore.hotels;
 const selectedDestination = searchResultStore.selectedDestination;
 const checkIn = searchResultStore.form.checkIn;
@@ -173,12 +145,12 @@ const handlePropertyName = value => {
   propertyName.value = value;
 };
 
-//update the rating through cusom events
+// update the rating through custom events
 const handleUpdateRating = value => {
   selectedRating.value = value;
 };
 
-//filtering hotels depend on rating/ property name
+// filtering hotels depend on rating/ property name
 const filteredHotels = computed(() => {
   return searchResultStore.hotels.filter(hotel => {
     const { name, reviewScore } = hotel.property;
@@ -191,43 +163,6 @@ const filteredHotels = computed(() => {
     return nameMatch && ratingMatch;
   });
 });
-
-// Formating the price of each hotel.
-const formatPrice = hotel =>
-  `$${hotel.property.priceBreakdown.grossPrice.value.toFixed(2)}`;
-
-//formating ratings
-const formatRate = hotel => `${hotel.property.reviewScore.toFixed() / 2}`;
-
-//prices
-const hasStrikethroughPrice = hotel =>
-  !!hotel.property.priceBreakdown.strikethroughPrice;
-
-const getStrikethroughPrice = hotel => {
-  const price = hotel.property.priceBreakdown.strikethroughPrice?.value || 0;
-  return `$${price.toFixed(2)}`;
-};
-
-//benefit  badges
-const hasBenefitBadges = hotel =>
-  hotel.property.priceBreakdown.benefitBadges?.length > 0;
-
-const isLimitedTimeDeal = hotel => {
-  const benefitBadges = hotel.property.priceBreakdown.benefitBadges;
-  return benefitBadges.some(
-    badge => badge.text.toLowerCase() === "limited-time deal"
-  );
-};
-const getBenefitBadges = hotel =>
-  hotel.property.priceBreakdown.benefitBadges
-    .map(badge => badge.text)
-    .join(", ");
-
-//taxes avaliable or not
-const hasTaxExceptions = hotel =>
-  hotel.property.priceBreakdown.taxExceptions?.length > 0;
-
-// setting rating of hotel
 </script>
 
 <style scoped>
@@ -240,3 +175,4 @@ const hasTaxExceptions = hotel =>
   border-bottom-right-radius: 5px;
 }
 </style>
+@/views/search-results/store/searchResults
