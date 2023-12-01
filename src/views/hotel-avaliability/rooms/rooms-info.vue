@@ -16,9 +16,10 @@
   </section>
 
   <!-- reserve button to direct to booking -->
-  <button
+  <router-link
+    :to="{ name: 'reservation' }"
     class="px-12 py-18 bg-blueColor-100 text-white w-full mx-auto rounded-md"
   >
     Reserve suite
-  </button>
+  </router-link>
 </template>

@@ -122,7 +122,7 @@ import hotelPrice from "./hotel-details/hotel-price.vue";
 
 import { useSearchResultStore } from "@/views/search-results/store/searchResults";
 import { computed, onMounted, ref } from "vue";
-import navbar from "@/components/UI/navbar.vue";
+import navbar from "@/components/shared/navbar.vue";
 
 const searchResultStore = useSearchResultStore();
 

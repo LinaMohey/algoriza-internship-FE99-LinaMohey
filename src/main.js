@@ -3,11 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 import { createPinia } from "pinia";
 
-import Navbar from "@/components/UI/navbar.vue";
-import Logo from "@/components/UI/logo.vue";
-import WarningSection from "@/components/sections/warning/warning-section.vue";
+import Navbar from "@/components/shared/navbar.vue";
+import Logo from "@/components/shared/logo.vue";
+import warningSection from "@/components/shared/warning/warning-section.vue";
 import mainLayout from "./layouts/main-layout.vue";
-// import Footer from "@/components/UI/Footer.vue";
 
 const app = createApp(App);
 const pinia = createPinia();
@@ -16,7 +15,7 @@ const pinia = createPinia();
 
 app.component("logo", Logo);
 app.component("navbar", Navbar);
-app.component("warning-section", WarningSection);
+app.component("warning-section", warningSection);
 app.component("main-layout", mainLayout);
 // app.component("footer", Footer);
 
