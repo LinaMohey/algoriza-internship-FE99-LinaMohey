@@ -6,11 +6,7 @@
     <div class="inspiration-trips-info flex-section mt-20">
       <div class="trip-1 relative">
         <div class="trip-1-image">
-          <img
-            src="@/assets/inspiration-trips/trip-1.png"
-            alt="trip-1-image"
-            class="min-w-400"
-          />
+          <img src="./assets/trip-1.png" alt="trip-1-image" class="min-w-400" />
         </div>
 
         <div class="inspiration-section">
@@ -25,11 +21,7 @@
         </div>
       </div>
       <div class="trip-2 relative">
-        <img
-          src="@/assets/inspiration-trips/trip-2.png"
-          alt="trip-2-image"
-          class="w-400"
-        />
+        <img src="./assets/trip-2.png" alt="trip-2-image" class="w-400" />
         <div class="trip-2-text inspiration-section">
           <h4 class="mb-2">Top cities for Vegan Travellers</h4>
           <p>
@@ -39,7 +31,7 @@
         </div>
       </div>
       <div class="trip-3 relative">
-        <img src="@/assets/inspiration-trips/trip-3.png" alt="trip-3-image" />
+        <img src="./assets/trip-3.png" alt="trip-3-image" />
         <div class="trip-3-text inspiration-section">
           <h4 class="mb-2">
             World’s top destinations during and post <br />

@@ -49,7 +49,7 @@
         <section id="overview  m-20 rounded shadow-md">
           <div class="hotel-info my-40 mx-3">
             <h4 class="py-2">{{ hotelDetails.hotel_name }}</h4>
-            <p class="py-2">Rating (reviews)</p>
+            <p class="py-2">4.5 ( {{ hotelDetails.reviews_nrs }})</p>
             <div class="address flex gap-2">
               <div class="location-image">
                 <img src="@/assets/location.png" alt="" />
@@ -98,6 +98,12 @@
                   {{ highlight.translated_name }}
                 </div>
               </div>
+
+              <p v-else>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus sequi fuga dicta laudantium odio corrupti quisquam
+                accusantium ratione voluptates? Vel!
+              </p>
             </div>
           </div>
         </section>
@@ -174,7 +180,7 @@
               :src="hotelDetails.rooms[room_id].photos[5].url_original"
               alt=""
             />
-            <img v-else src="@/assets/suite2.png" alt="Default Image" />
+            <img v-else src="@/assets/suite1.png" alt="Default Image" />
           </div>
 
           <h5>
@@ -268,7 +274,12 @@
           </button>
         </div>
       </section>
-      <div v-else>No rooms available</div>
+      <div
+        v-else
+        class="shadow-md mt-50 bg-red-400 p-20 text-center text-lg text-bold"
+      >
+        No rooms available
+      </div>
     </div>
     <warning-section> </warning-section>
   </main-layout>

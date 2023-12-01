@@ -20,9 +20,9 @@
 </template>
 
 <script setup>
-import MainSection from "@/components/sections/main-section.vue";
-import DreamVacation from "@/components/sections/dream-vacation.vue";
-import InspirationTrips from "@/components/sections/inspiration-trips.vue";
-import PopularHotels from "@/components/sections/popular-hotels.vue";
-import explore from "@/components/sections/explore.vue";
+import MainSection from "@/components/sections/main-section/main-section.vue";
+import DreamVacation from "@/components/sections/dream-vacation/dream-vacation.vue";
+import InspirationTrips from "@/components/sections/inspiration-trips/inspiration-trips.vue";
+import PopularHotels from "@/components/sections/popular-section/popular-hotels.vue";
+import explore from "@/components/sections/explore-section/explore.vue";
 </script>

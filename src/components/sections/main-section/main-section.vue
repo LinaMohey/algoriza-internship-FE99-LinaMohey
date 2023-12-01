@@ -2,11 +2,7 @@
   <main>
     <div class="main-layout relative">
       <div>
-        <img
-          src="@/assets/main-section/main.png"
-          class="w-full"
-          alt="main-section-image"
-        />
+        <img src="./assets/main.png" class="w-full" alt="main-section-image" />
       </div>
 
       <div
@@ -24,5 +20,5 @@
 </template>
 
 <script setup>
-import SearchForm from "./search-form.vue";
+import SearchForm from "../search/search-form.vue";
 </script>

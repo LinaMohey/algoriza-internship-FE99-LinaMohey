@@ -1,7 +1,7 @@
 <template>
   <header class="relative">
     <navbar
-      class="bg-gradient-to-r from-blueColor-200 via-blueColor-200 to-blueColor-300 h-200 text-white"
+      class="bg-gradient-to-r from-blueColor-200 via-blueColor-200 to-blueColor-300 h-200 text-white shadow-none"
     ></navbar>
     <div class="search absolute -bottom-4 left-80 shadow-md">
       <form class="bg-white my-auto rounded-md p-2">
@@ -26,50 +26,22 @@
   >
     <div class="main-filter w-295">
       <!-- Search by property -->
-      <div
-        class="search-by-property rounded-md bg-grayColor-100 p-4 items-center"
-      >
-        <p class="font-semibold mb-4">Search by property name</p>
-        <div
-          class="search-input flex items-center border-1 border-grayColor-400 rounded-md p-2 bg-white py-3"
-        >
-          <div class="input-search">
-            <img src="@/assets/search.png" alt="Search Icon" />
-          </div>
-          <input
-            class="flex-1 ml-2 outline-none bg-transparent text-grayColor-300"
-            type="text"
-            v-model="propertyName"
-            placeholder="e.g., Beach westpalm"
-          />
-        </div>
-      </div>
+      <search-by-property @updateByPropertyName="handlePropertyName">
+      </search-by-property>
 
+      <!-- Filters -->
       <div class="filtering">
         <h4 class="m-4">Filter by</h4>
 
         <!-- Filter by Budget -->
         <filter-by-budget> </filter-by-budget>
 
-        <!-- Search by rating -->
-        <div class="search-by-ratings border border-grayColor-400 rounded-md">
-          <h4 class="filter-title">Rating</h4>
-          <p class="mb-2 px-4">Show only ratings more than</p>
-          <div class="rating-search-container flex px-4">
-            <div
-              class="rating-search flex gap-2 items-center border p-2 mb-6"
-              v-for="rating in [1, 2, 3, 4, 5]"
-              :key="rating"
-            >
-              <div><img src="@/assets/stars.png" alt="" /></div>
-              <button class="rating-button" @click="updateRating(rating)">
-                {{ rating }}
-              </button>
-            </div>
-          </div>
-        </div>
+        <!-- Filter by rating -->
+        <filter-by-rating @updateRating="handleUpdateRating">
+        </filter-by-rating>
       </div>
     </div>
+
     <!-- Hotel results -->
     <div class="search-results m-10">
       <div class="desination-info flex justify-between m-6">
@@ -95,12 +67,26 @@
         </div>
         <div class="hotel-info">
           <h3 class="my-15">{{ hotel.property.name }}</h3>
-          <div class="ratings">
+          <div class="ratings flex gap-">
+            <img
+              v-for="index in Math.floor(formatRate(hotel))"
+              src="@/assets/star-fill.png"
+              :key="index"
+              alt="filled-star"
+            />
+
+            <img
+              v-if="hotel.property.reviewScore % 1 !== 0"
+              src="@/assets/star-half.png"
+              alt="half-filled "
+            />
+
             <p>
-              {{ rating(hotel) }} ({{ hotel.property.reviewCount }}
+              {{ formatRate(hotel) }} ({{ hotel.property.reviewCount }}
               Reviews)
             </p>
           </div>
+
           <div class="description py-10 my-10">
             <h4>Live a little and celbrate with champagne</h4>
             <p>
@@ -157,8 +143,10 @@
 </template>
 
 <script setup>
-import FilterByBudget from "./filtering/budget.vue";
-import filterBySort from "./filtering/sorting.vue";
+import FilterByBudget from "./api-filtering/budget.vue";
+import filterBySort from "./api-filtering/sorting.vue";
+import filterByRating from "./client-filtering/filter-by-rating.vue";
+import searchByProperty from "./client-filtering/search-by-property.vue";
 import { useSearchResultStore } from "@/store/modules/searchResults";
 import { computed, onMounted, ref } from "vue";
 import navbar from "@/components/UI/navbar.vue";
@@ -180,12 +168,15 @@ const guests = searchResultStore.form.guests;
 const propertyName = ref("");
 const selectedRating = ref(0);
 
-// Formating the price of each hotel.
-const formatPrice = hotel =>
-  `$${hotel.property.priceBreakdown.grossPrice.value.toFixed(2)}`;
+// update the property name by emitting custom event
+const handlePropertyName = value => {
+  propertyName.value = value;
+};
 
-//formating ratings
-const rating = hotel => `${hotel.property.reviewScore.toFixed() / 2}`;
+//update the rating through cusom events
+const handleUpdateRating = value => {
+  selectedRating.value = value;
+};
 
 //filtering hotels depend on rating/ property name
 const filteredHotels = computed(() => {
@@ -201,10 +192,12 @@ const filteredHotels = computed(() => {
   });
 });
 
-//update the rating
-const updateRating = newRating => {
-  selectedRating.value = newRating;
-};
+// Formating the price of each hotel.
+const formatPrice = hotel =>
+  `$${hotel.property.priceBreakdown.grossPrice.value.toFixed(2)}`;
+
+//formating ratings
+const formatRate = hotel => `${hotel.property.reviewScore.toFixed() / 2}`;
 
 //prices
 const hasStrikethroughPrice = hotel =>
@@ -233,6 +226,8 @@ const getBenefitBadges = hotel =>
 //taxes avaliable or not
 const hasTaxExceptions = hotel =>
   hotel.property.priceBreakdown.taxExceptions?.length > 0;
+
+// setting rating of hotel
 </script>
 
 <style scoped>

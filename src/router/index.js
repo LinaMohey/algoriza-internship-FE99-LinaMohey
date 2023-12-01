@@ -6,6 +6,7 @@ import WelcomeCard from "@/views/welcome-card.vue";
 import hotelResults from "@/views/search-results/hotel-results.vue";
 import hotelAvaliability from "@/views/avaliability/hotel-avalibility.vue";
 import Reservation from "@/views/reservation.vue";
+import { useAuthStore } from "@/store/modules/auth";
 
 const routes = [
   {
@@ -28,10 +29,24 @@ const routes = [
     name: "welcome-card",
     component: WelcomeCard,
   },
+
   {
     path: "/hotel-result",
     name: "hotel-results",
     component: hotelResults,
+    beforeEnter: (to, from, next) => {
+      const AuthStore = useAuthStore();
+
+      // Check if the user is authenticated
+      if (AuthStore.isAuthenticated) {
+        next(); // Continue to the route
+      } else if (to.name === "sign-in" || to.name === "register") {
+        next();
+      } else {
+        // Redirect to the sign-in page if not authenticated
+        next("/sign-in");
+      }
+    },
   },
 
   {

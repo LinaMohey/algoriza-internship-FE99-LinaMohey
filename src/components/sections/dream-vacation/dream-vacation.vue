@@ -10,7 +10,7 @@
     <div class="vacations-info flex-section">
       <div class="vacation-1">
         <img
-          src="../../assets/vacations-section/vacation-1.png"
+          src="./assets/vacation-1.png"
           alt="vacation-1-image"
           class="my-2"
         />
@@ -21,7 +21,7 @@
       </div>
       <div class="vacation-2">
         <img
-          src="../../assets/vacations-section/vacation-2.png"
+          src="./assets/vacation-2.png"
           alt="vacation-2-image"
           class="my-2"
         />
@@ -32,7 +32,7 @@
       </div>
       <div class="vacation-3">
         <img
-          src="../../assets/vacations-section/vacation-3.png"
+          src="./assets/vacation-3.png"
           alt="vacation-3-image"
           class="my-2"
         />
@@ -43,7 +43,7 @@
       </div>
       <div class="vacation-4">
         <img
-          src="../../assets/vacations-section/vacation-4.png"
+          src="./assets/vacation-4.png"
           alt="vacation-4-image "
           class="my-2"
         />
