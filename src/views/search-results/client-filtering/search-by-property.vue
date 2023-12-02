@@ -3,7 +3,7 @@
   <section
     class="search-by-property rounded-md bg-grayColor-100 p-4 items-center"
   >
-    <h4 class="font-semibold mb-4">Search by property name</h4>
+    <h4 class="font-medium mb-4">Search by property name</h4>
     <div
       class="search-input flex items-center border-1 border-grayColor-400 rounded-md p-2 bg-white py-3"
     >

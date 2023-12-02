@@ -1,5 +1,6 @@
 <template>
   <main-layout>
+    <!-- dynamic rendering through slot -->
     <main-section> </main-section>
     <warning-section> </warning-section>
     <div class="mx-auto">

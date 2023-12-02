@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="flex justify-between items-center p-5 shadow-sm mb-20 bg-white">
+    <div class="flex justify-between items-center p-25">
       <logo></logo>
 
       <!-- Navigation Links -->
@@ -68,7 +68,7 @@
       <router-link
         v-else
         :to="{ name: 'sign-in' }"
-        class="bg-blueColor-100 text-white rounded-md px-3 py-1"
+        class="bg-blueColor-100 text-white rounded-md px-15 py-5"
         >Login</router-link
       >
     </div>
@@ -95,4 +95,3 @@ const signOut = () => {
   // You can add additional logic or emit events if needed
 };
 </script>
-@/views/authentication/store/auth

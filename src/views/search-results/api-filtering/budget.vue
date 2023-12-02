@@ -4,73 +4,74 @@
     class="budget-filter-card rounded-md border border-solid border-grayColor-400 my-15"
   >
     <!-- budget ranges -->
-    <div class="budget-range">
-      <h4 class="filter-title">Your budget per day</h4>
+    <div class="budget-range text-grayColor-600">
+      <h4 class="filter-title font-medium">Your budget per day</h4>
 
       <div class="mb-2 px-2">
         <input
           type="checkbox"
-          class="mx-2"
+          class="mx-2 w-5"
           id="budget1"
           name="budget"
           @click="setBudget(0, 200)"
         />
-        <label for="budget1">$0 - $200</label>
+        <label for="budget1" class="">$0 - $200</label>
       </div>
-      <div class="budget-range">
-        <h4 class="filter-title">Your budget per day</h4>
 
-        <div class="mb-2 px-2">
-          <input
-            type="checkbox"
-            class="mx-2"
-            id="budget1"
-            name="budget"
-            @click="setBudget(0, 200)"
-          />
-          <label for="budget1">$0 - $200</label>
-        </div>
-        <div class="mb-2 px-2">
-          <input
-            type="checkbox"
-            class="mx-2"
-            id="budget2"
-            name="budget"
-            @click="setBudget(200, 500)"
-          />
-          <label for="budget2">$200 - $500</label>
-        </div>
-        <div class="mb-2 px-2">
-          <input
-            type="checkbox"
-            class="mx-2"
-            id="budget3"
-            name="budget"
-            @click="setBudget(500, 1000)"
-          />
-          <label for="budget3">$500 - $1000</label>
-        </div>
-        <div class="mb-2 px-2">
-          <input
-            type="checkbox"
-            class="mx-2"
-            id="budget4"
-            name="budget"
-            @click="setBudget(1000, 2000)"
-          />
-          <label for="budget4">$1000 - $2000</label>
-          <span>{{ getHotelCount(1000, 2000) }}</span>
-        </div>
+      <div class="mb-2 px-2">
+        <input
+          type="checkbox"
+          class="mx-2 w-5"
+          id="budget2"
+          name="budget"
+          @click="setBudget(200, 500)"
+        />
+        <label for="budget2">$200 - $500</label>
+      </div>
+
+      <div class="mb-2 px-2">
+        <input
+          type="checkbox"
+          class="mx-2 w-5"
+          id="budget3"
+          name="budget"
+          @click="setBudget(500, 1000)"
+        />
+        <label for="budget3">$500 - $1000</label>
+      </div>
+
+      <div class="mb-2 px-2">
+        <input
+          type="checkbox"
+          class="mx-2 w-5"
+          id="budget4"
+          name="budget"
+          @click="setBudget(1000, 2000)"
+        />
+        <label for="budget4">$1000 - $2000</label>
+        <span>{{ getHotelCount(1000, 2000) }}</span>
+      </div>
+
+      <div class="mb-2 px-2">
+        <input
+          type="checkbox"
+          class="mx-2 w-5"
+          id="budget4"
+          name="budget"
+          @click="setBudget(2000, 5000)"
+        />
+        <label for="budget4">$2000 - $5000</label>
+        <span>{{ getHotelCount(2000, 5000) }}</span>
       </div>
     </div>
 
     <!-- custom budget -->
-    <div class="custom-budget flex items-center gap-4 mb-4 px-4 mt-8">
-      <p>Set your own budget</p>
+    <div class="custom-budget flex items-center gap-4 mb-4 px-4 mt-18">
+      <p class="text-grayColor-300">Set your own budget</p>
       <label class="switch">
         <input
           type="checkbox"
-          class="rounded"
+          class="rounde w-5d"
           @change="showCustomBudgetInput"
         />
         <span class="slider round"></span>

@@ -11,7 +11,7 @@ export const useAvaliableHotels = defineStore("avaliableHotels", {
     setDetails(details) {
       this.hotelDetails = details;
     },
-    setDetails(roomId) {
+    setRoomId(roomId) {
       this.room_id = roomId;
     },
   },

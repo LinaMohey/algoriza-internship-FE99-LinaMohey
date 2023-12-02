@@ -1,5 +1,5 @@
 <template>
-  <h5>
+  <h5 class="px-20 pt-20 font-medium text-lg tracking-wide">
     {{ hotelDetails.rooms[room_id]?.bed_configurations[0]?.bed_types[0].name }},
     {{ hotelDetails.rooms[room_id]?.bed_configurations[0]?.bed_types.length }}
     {{

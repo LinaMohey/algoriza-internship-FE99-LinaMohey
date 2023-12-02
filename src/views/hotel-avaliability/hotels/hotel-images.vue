@@ -24,12 +24,16 @@
     <!-- show static photos if the rooms not exist -->
     <div v-else class="grid grid-cols-2 grid-rows-2 gap-10">
       <img
-        src="@/assets/room-1.png"
+        src="../assets/images/hotel-images/room-1.png"
         class="row-span-2 self-center h-full"
         alt=""
       />
-      <img src="@/assets/room2.png" alt="" />
-      <img src="@/assets/room-3.png" alt="" class="row-span-2" />
+      <img src="../assets/images/hotel-images/room2.png" alt="" />
+      <img
+        src="../assets/images/hotel-images/room-3.png"
+        alt=""
+        class="row-span-2"
+      />
     </div>
   </section>
 </template>

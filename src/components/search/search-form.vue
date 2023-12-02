@@ -1,8 +1,7 @@
 <template>
-  <div class="search">
-    <form @submit.prevent="search" class="bg-white my-auto rounded-md p-2">
+  <div class="min-w-1030 mx-1/2 flex justify-center -translate-y-35">
+    <form @submit.prevent="search" class="bg-white rounded-md p-8 shadow-lg">
       <!-- refactoring the form -->
-
       <!-- destination component -->
       <destination-selection
         :destinations="filteredDestination"
@@ -16,19 +15,20 @@
       ></date-inputs>
 
       <input
-        class="input"
+        class="input-main max-w-147"
         v-model="rooms"
         type="number"
-        placeholder="Number of rooms"
+        placeholder="Rooms"
       />
+
       <input
-        class="input"
+        class="input-main max-w-147"
         v-model="guests"
         type="number"
-        placeholder="Number of guests"
+        placeholder="Guests"
       />
       <button
-        class="bg-blueColor-100 px-35 py-2 text-white rounded-md"
+        class="bg-blueColor-100 px-35 text-white rounded-md py-10"
         type="submit"
       >
         Search
@@ -50,8 +50,8 @@ const searchResultStore = useSearchResultStore();
 const selectedDestination = ref("");
 const checkIn = ref("");
 const checkOut = ref("");
-const rooms = ref(1);
-const guests = ref(1);
+const rooms = ref("");
+const guests = ref("");
 const destinations = computed(() => searchResultStore.destinations);
 const loading = ref(true);
 
@@ -140,4 +140,3 @@ const search = async () => {
   }
 };
 </script>
-@/views/search-results/store/searchResults

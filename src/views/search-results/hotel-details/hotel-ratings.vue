@@ -1,5 +1,5 @@
 <template>
-  <section class="ratings flex gap-">
+  <section class="ratings flex">
     <img
       v-for="index in Math.floor(formatRate(hotel))"
       src="@/assets/star-fill.png"
@@ -8,6 +8,7 @@
     />
 
     <img
+      class="ml-1"
       v-if="hotel.property.reviewScore % 1 !== 0"
       src="@/assets/star-half.png"
       alt="half-filled "

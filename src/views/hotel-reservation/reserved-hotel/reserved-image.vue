@@ -1,6 +1,29 @@
 <template>
-  <section class="room-image">
+  <!-- dynamic image if room exist -->
+  <section class="room-image rounded-t-md">
+    <img
+      v-if="showSpecificImage()"
+      :src="showSpecificImage()"
+      alt="room-image"
+    />
+
     <!-- static image if not exist -->
-    <img src="@/assets/room2.png" alt="default-room-image" />
+    <img v-else src="@/assets/room2.png" alt="default-room-image" />
   </section>
 </template>
+
+<script setup>
+import { useAvaliableHotels } from "@/views/hotel-avaliability/store/avaliable-hotels";
+
+//calling the store to retrieve hotel image.
+const avaliableHotels = useAvaliableHotels();
+const hotelDetails = avaliableHotels.hotelDetails;
+const room_id = avaliableHotels.room_id;
+
+// loop through image related to hotel
+const showSpecificImage = () => {
+  const hotelImage =
+    hotelDetails.rooms[room_id]?.photos[0].url_original || null;
+  return hotelImage;
+};
+</script>

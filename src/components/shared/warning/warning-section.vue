@@ -1,6 +1,6 @@
 <template>
   <div
-    class="warning flex my-8 bg-warning p-4 rounded-md gap-4 justify-items-center"
+    class="warning flex my-25 bg-warning p-20 rounded-lg gap-15 justify-items-center"
   >
     <div class="warining-img">
       <img src="./assets/warning.png " class="" alt="" />

@@ -1,26 +1,33 @@
 <template>
   <!-- header section -->
-  <header class="relative">
+  <header>
     <!-- navigation bar -->
     <navbar
       class="bg-gradient-to-r from-blueColor-200 via-blueColor-200 to-blueColor-300 h-200 text-white shadow-none"
     ></navbar>
 
     <!-- search form -->
-    <div class="search absolute -bottom-4 left-80 shadow-md">
-      <form class="bg-white my-auto rounded-md p-2">
+    <div class="min-w-1030 mx-1/2 flex justify-center -translate-y-35">
+      <form class="bg-white my-auto rounded-md p-2 shadow-md">
         <!-- destination dropdown -->
-        <label for="destination">Destination:</label>
-        <select>
+
+        <label for="destination">Where are you going?:</label>
+        <select class="input-main">
           <option>{{ selectedDestination }}</option>
         </select>
 
         <!-- date inputs, rooms, guests, and search button -->
-        <input class="input" :value="checkIn" type="date" />
-        <input class="input" :value="checkOut" type="date" />
-        <input class="input" :value="rooms" type="number" />
-        <input class="input" :value="guests" type="number" />
-        <button class="input" type="submit">Search</button>
+        <input class="input-main" :value="checkIn" type="date" />
+        <input class="input-main" :value="checkOut" type="date" />
+        <input class="input-main max-w-147" :value="rooms" type="number" />
+        <input class="input-main max-w-147" :value="guests" type="number" />
+        <button
+          disabled
+          class="bg-blueColor-100 px-35 text-white rounded-md py-10"
+          type="submit"
+        >
+          Search
+        </button>
       </form>
     </div>
   </header>
@@ -38,7 +45,7 @@
 
       <!-- filters -->
       <div class="filtering">
-        <h4 class="m-4">Filter by</h4>
+        <h4 class="m-4 font-semi-bold text-lg">Filter by</h4>
 
         <!-- filter by budget -->
         <filter-by-budget></filter-by-budget>
@@ -52,7 +59,7 @@
     <div class="search-results m-10">
       <!-- destination information and sorting -->
       <div class="desination-info flex justify-between m-6">
-        <p>
+        <p class="text-2xl font-semibold tracking-wide">
           {{ selectedDestination }} : {{ filteredHotels.length }} search results
           found
         </p>
@@ -65,7 +72,7 @@
       <div
         v-for="hotel in filteredHotels"
         :key="hotel.property.id"
-        class="flex gap-20 border border-grayColor-400 p-3 mb-4 relative"
+        class="flex items-center gap-20 border border-grayColor-400 p-20 mb-4 relative rounded-md"
       >
         <!-- hotel image -->
         <hotel-image :hotel="hotel"></hotel-image>
@@ -73,7 +80,7 @@
         <!-- hotel info -->
         <div class="hotel-info">
           <!-- property name -->
-          <property-name :hotel="hotel"></property-name>
+          <hotel-name :hotel="hotel"></hotel-name>
 
           <!-- hotel ratings -->
           <hotel-ratings :hotel="hotel"></hotel-ratings>

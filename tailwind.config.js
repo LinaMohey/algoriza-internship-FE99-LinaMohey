@@ -1,15 +1,13 @@
 module.exports = {
-  content: [
-    "./src/**/*.html",
-    "./src/**/*.vue",
-    // Add other file types if needed
-  ],
+  content: ["./src/**/*.html", "./src/**/*.vue"],
   theme: {
     extend: {
       fontFamily: {
         body: [" SF Pro Display", "sans-serif"],
       },
       spacing: {
+        5: "5px",
+        8: "8px",
         10: "10px",
         11: "11px",
         12: "12px",
@@ -24,8 +22,16 @@ module.exports = {
         50: "50px",
         55: "55px",
         60: "60px",
+        70: "70px",
+        75: "75px",
+        80: "80px",
+
         90: "90px",
+        95: "95px",
         100: "100px",
+        110: "110px",
+        120: "120px",
+        150: "150px",
       },
       width: {
         103: "103px",
@@ -37,6 +43,8 @@ module.exports = {
         150: "150px",
         240: "240px",
         338: "338px",
+        360: "360px",
+        340: "340px",
       },
       height: {
         119: "119px",
@@ -52,13 +60,17 @@ module.exports = {
         500: "500px",
         670: "670px",
         780: "780px",
+        1030: "1030px",
       },
       maxWidth: {
         60: "60px",
-        810: "810px",
-        1350: "1350px",
+        147: "147px",
         400: "400px",
+        810: "810px",
         820: "820px",
+        1030: "1030px",
+        1300: "1300px",
+        1350: "1350px",
       },
       minHeight: {
         200: "200",

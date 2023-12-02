@@ -6,12 +6,14 @@
       v-if="hasStrikethroughPrice(hotel)"
       :class="{
         'line-through text-xs': hasStrikethroughPrice(hotel),
-        'text-red-500 ': hasStrikethroughPrice(hotel),
+        'text-red-500 font-medium': hasStrikethroughPrice(hotel),
       }"
     >
       {{ getStrikethroughPrice(hotel) }}
     </p>
-    <p>{{ formatPrice(hotel) }}</p>
+    <p class="text-grayColor-600 text-3xl font-medium">
+      {{ formatPrice(hotel) }}
+    </p>
 
     <p v-if="hasTaxExceptions(hotel)">Price Includes Taxes and Fees</p>
   </section>

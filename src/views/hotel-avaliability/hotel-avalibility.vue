@@ -1,19 +1,17 @@
 <template>
   <main-layout>
-    <div class="main-container">
+    <loading-spinner v-if="loading"> </loading-spinner>
+
+    <div class="main-container" v-if="!loading">
       <!-- Section to contain hotel rooms -->
-      <section v-if="loading" class="hotel-images mx-auto">
-        <p>Loading...</p>
-      </section>
-      <section v-else>
-        <!-- hotel images -->
-        <hotel-images
-          :hotelDetails="hotelDetails"
-          :block="block"
-          :room_id="room_id"
-        >
-        </hotel-images>
-      </section>
+      <!-- <section v-if="loading" class="hotel-images mx-auto"> -->
+      <!-- hotel images -->
+      <hotel-images
+        :hotelDetails="hotelDetails"
+        :block="block"
+        :room_id="room_id"
+      >
+      </hotel-images>
 
       <!-- overview and rooms nav links -->
       <navigation-links> </navigation-links>
@@ -53,13 +51,16 @@
       </section>
 
       <!-- avaliable rooms  -->
-      <section v-if="block" class="avaliable-rooms flex gap-4 justify-between">
+      <section
+        v-if="block"
+        class="avaliable-rooms flex gap-2 justify-between mb-150"
+      >
         <!-- ad static image -->
-        <div class="ad-image my-auto">
-          <img src="@/assets/ad-reservation.png" alt="" />
+        <div class="ad-image my-auto self-center">
+          <img src="@/assets/ad-reservation.png " alt="" />
         </div>
 
-        <div class="room shadow-md mt-50" id="rooms">
+        <div class="room shadow-md mt-50" id="rooms ">
           <!-- rooms images if exist -->
           <rooms-images
             :hotelDetails="hotelDetails"
@@ -83,16 +84,13 @@
             :room_id="room_id"
           >
           </rooms-info>
-
           <!-- reserve button to direct to booking -->
-          <router-link
-            :to="{
-              name: 'reservation',
-            }"
-            class="px-12 py-18 bg-blueColor-100 text-white w-full mx-auto rounded-md"
+          <button
+            @click="navigateToReservation"
+            class="px-12 py-10 mx-4 bg-blueColor-100 text-white w-340 rounded-md my-10"
           >
             Reserve suite
-          </router-link>
+          </button>
         </div>
 
         <div class="room shadow-md mt-50">
@@ -121,14 +119,12 @@
           </rooms-info>
 
           <!-- reserve button to direct to booking -->
-          <router-link
-            :to="{
-              name: 'reservation',
-            }"
-            class="px-12 py-18 bg-blueColor-100 text-white w-full mx-auto rounded-md"
+          <button
+            @click="navigateToReservation"
+            class="px-12 py-10 mx-4 bg-blueColor-100 text-white w-340 rounded-md my-10"
           >
             Reserve suite
-          </router-link>
+          </button>
         </div>
       </section>
 
@@ -154,27 +150,36 @@ import roomsInfo from "./rooms/rooms-info.vue";
 import roomsImages from "./rooms/rooms-images.vue";
 import roomsOverview from "./rooms/rooms-overview.vue";
 import roomsFacilities from "./rooms/rooms-facilities.vue";
-import bedTypes from "./rooms/bed-type.vue";
+import bedType from "./rooms/bed-type.vue";
 import navigationLinks from "./rooms/navigation-links.vue";
 import exploreArea from "./hotels/explore-area.vue";
 import hotelMap from "./hotels/hotel-map.vue";
+import { useRouter } from "vue-router";
 
 const searchResultStore = useSearchResultStore();
 const avaliableHotels = useAvaliableHotels();
-
 const props = defineProps(["hotelId"]);
 const loading = ref(true);
 const hotelDetails = computed(() => searchResultStore.details);
 const block = computed(() => hotelDetails.value?.block?.[0]);
-const room_id = computed(() => block.value?.room_id);
-
+const room_id = computed(() => hotelDetails.value?.block?.[0]?.room_id);
 const setHotelDetails = avaliableHotels.setDetails(hotelDetails);
 const setRoomId = avaliableHotels.setRoomId(room_id);
+const router = useRouter();
+
+const navigateToReservation = () => {
+  router.push({ name: "reservation" });
+};
 
 //fetching the details of each hotel on mounted by setting the hotel id specific to it
 onMounted(async () => {
-  await searchResultStore.setHotelId(props.hotelId);
-  await searchResultStore.fetchDetails();
-  loading.value = false;
+  try {
+    await searchResultStore.setHotelId(props.hotelId);
+    await searchResultStore.fetchDetails();
+    loading.value = false;
+  } catch (error) {
+    console.error(error);
+    loading.value = false;
+  }
 });
 </script>
