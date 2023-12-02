@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="flex justify-between items-center p-5 shadow-sm mb-20">
+    <div class="flex justify-between items-center p-5 shadow-sm mb-20 bg-white">
       <logo></logo>
 
       <!-- Navigation Links -->

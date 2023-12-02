@@ -124,6 +124,7 @@ const showCustomBudgetInput = () => {
   showCustomBudget.value = !showCustomBudget.value;
 };
 
+//setting budget in store
 const setCustomBudget = () => {
   searchResultStore.setBudgetRange(minBudget.value, maxBudget.value);
 };
@@ -132,8 +133,3 @@ const getHotelCount = (min, max) => {
   return searchResultStore.getHotelCountInBudget(min, max);
 };
 </script>
-
-<style scoped>
-/* switch styles... */
-</style>
-@/views/search-results/store/searchResults

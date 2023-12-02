@@ -113,7 +113,7 @@ import filterByBudget from "./api-filtering/budget.vue";
 import filterBySort from "./api-filtering/sorting.vue";
 import filterByRating from "./client-filtering/filter-by-rating.vue";
 import searchByProperty from "./client-filtering/search-by-property.vue";
-import hotelName from "./hotel-details/property-name.vue";
+import hotelName from "./hotel-details/hotel-name.vue";
 import hotelImage from "./hotel-details/hotel-image.vue";
 import hotelRatings from "./hotel-details/hotel-ratings.vue";
 import hotelDescription from "./hotel-details/hotel-description.vue";
@@ -175,4 +175,3 @@ const filteredHotels = computed(() => {
   border-bottom-right-radius: 5px;
 }
 </style>
-@/views/search-results/store/searchResults

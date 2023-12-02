@@ -29,15 +29,15 @@
         <label for="mobile-number" class="block text-md font-medium"
           >Mobile number</label
         >
-        <select
-          id="country"
-          class="mt-1 border rounded-sm reservation-input min-w-150"
-        >
-          <option value="">
-            <img src="@/assets/location.png" alt="" />
-            EG +20
-          </option>
-        </select>
+
+        <div class="custom-select-container">
+          <select
+            id="country"
+            class="mt-1 border rounded-sm reservation-input min-w-150"
+          >
+            <option>EG +20</option>
+          </select>
+        </div>
       </div>
 
       <div class="mt-5 self-center">
@@ -49,11 +49,17 @@
       </div>
     </div>
 
-    <div class="mt-4">
-      <input type="checkbox" id="alerts" class="mr-2" />
-      <label for="alerts" class="text-sm font-medium"
+    <div class="mt-20 mb-15 flex gap-2">
+      <input
+        type="checkbox"
+        id="alerts"
+        class="w-18 border-1 rounded-lg border border-grayColor-100"
+      />
+      <label for="alerts" class="text-sm"
         >Receive text alerts about this trip</label
       >
     </div>
   </form>
 </template>
+
+<style scoped></style>

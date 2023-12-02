@@ -90,7 +90,16 @@ module.exports = {
           600: "#333333",
           700: "#F4F4F4",
         },
+        redColor: {
+          100: "#EB5757",
+        },
+
         warning: "#FCEFCA",
+      },
+
+      fontSize: {
+        22: "22px",
+        32: "32px",
       },
     },
   },

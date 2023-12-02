@@ -5,6 +5,7 @@
 
 body {
   font-family: "SF Pro Display", sans-serif;
+  background-color: #f2f2f2;
 }
 
 .flex-section {
@@ -46,9 +47,10 @@ body {
   @apply mt-1 border rounded-s py-10 px-12 bg-grayColor-100 outline-blueColor-100;
 }
 
-.reservation-card {
+.reservation-title {
   @apply bg-blueColor-100 text-white p-4 flex items-center rounded-tr-md rounded-tl-md gap-4;
 }
-/* .inputs {
-  @apply "bg-grayColor-100 py-2 text-grayColor-300 rounded-sm my-2";
-} */
+
+.reservation-card {
+  @apply shadow-sm max-w-810 rounded-md bg-white;
+}

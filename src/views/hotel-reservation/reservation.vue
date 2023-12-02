@@ -2,42 +2,46 @@
   <navbar> </navbar>
   <div class="flex max-w-1350 mx-auto justify-evenly">
     <section class="reservation">
-      <header>
-        <h4>Secure your reservation</h4>
+      <header class="mt-20">
+        <h4 class="text-32 font-bold">Secure your reservation</h4>
       </header>
       <warning-section> </warning-section>
 
-      <!-- user info -->
-      <user-form-title> </user-form-title>
-
-      <!-- user form  -->
-      <user-form> </user-form>
+      <!-- user section -->
+      <div class="user-info reservation-card">
+        <!-- user info -->
+        <user-form-title> </user-form-title>
+        <!-- user form  -->
+        <user-form> </user-form>
+      </div>
 
       <!-- payment section-->
-      <div class="payment shadow-md max-w-810 mt-35">
+      <div class="payment reservation-card mt-35">
         <!-- payment form title -->
         <payment-form-title> </payment-form-title>
-
         <!-- cards -->
         <payment-cards> </payment-cards>
-
         <!-- payment form  -->
         <payment-form> </payment-form>
       </div>
 
       <!-- important info about booking -->
-      <booking-info> </booking-info>
+      <div class="user-info reservation-card mt-35 mb-100">
+        <booking-info> </booking-info>
+      </div>
     </section>
 
     <!-- reserved hotel section  -->
     <section class="reserved-hotel">
-      <div class="room shadow-md mt-50">
+      <div class="room shadow-sm mt-50 bg-white rounded-b-md">
         <reserved-image> </reserved-image>
         <reserved-info> </reserved-info>
       </div>
 
       <!-- reserved hotel price -->
-      <reserved-price> </reserved-price>
+      <div class="price reservation-card mt-35 mb-100">
+        <reserved-price> </reserved-price>
+      </div>
     </section>
   </div>
 </template>

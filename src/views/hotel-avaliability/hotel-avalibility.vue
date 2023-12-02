@@ -83,6 +83,16 @@
             :room_id="room_id"
           >
           </rooms-info>
+
+          <!-- reserve button to direct to booking -->
+          <router-link
+            :to="{
+              name: 'reservation',
+            }"
+            class="px-12 py-18 bg-blueColor-100 text-white w-full mx-auto rounded-md"
+          >
+            Reserve suite
+          </router-link>
         </div>
 
         <div class="room shadow-md mt-50">
@@ -109,6 +119,16 @@
             :room_id="room_id"
           >
           </rooms-info>
+
+          <!-- reserve button to direct to booking -->
+          <router-link
+            :to="{
+              name: 'reservation',
+            }"
+            class="px-12 py-18 bg-blueColor-100 text-white w-full mx-auto rounded-md"
+          >
+            Reserve suite
+          </router-link>
         </div>
       </section>
 
@@ -126,6 +146,7 @@
 
 <script setup>
 import { useSearchResultStore } from "@/views/search-results/store/searchResults";
+import { useAvaliableHotels } from "@/views/hotel-avaliability/store/avaliable-hotels";
 import { onMounted, computed, ref } from "vue";
 import hotelInfo from "./hotels/hotel-info.vue";
 import hotelImages from "./hotels/hotel-images.vue";
@@ -139,11 +160,16 @@ import exploreArea from "./hotels/explore-area.vue";
 import hotelMap from "./hotels/hotel-map.vue";
 
 const searchResultStore = useSearchResultStore();
+const avaliableHotels = useAvaliableHotels();
+
 const props = defineProps(["hotelId"]);
 const loading = ref(true);
 const hotelDetails = computed(() => searchResultStore.details);
 const block = computed(() => hotelDetails.value?.block?.[0]);
 const room_id = computed(() => block.value?.room_id);
+
+const setHotelDetails = avaliableHotels.setDetails(hotelDetails);
+const setRoomId = avaliableHotels.setRoomId(room_id);
 
 //fetching the details of each hotel on mounted by setting the hotel id specific to it
 onMounted(async () => {

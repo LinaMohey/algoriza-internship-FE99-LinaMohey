@@ -30,4 +30,3 @@ watchEffect(() => {
   searchResultStore.setSelectedSortOption(selectedSort.value);
 });
 </script>
-@/views/search-results/store/searchResults
