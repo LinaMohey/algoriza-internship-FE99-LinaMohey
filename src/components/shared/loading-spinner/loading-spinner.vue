@@ -1,8 +1,11 @@
 <template>
-  <div>
-    <img src="assets/images/loading.gif" alt="" />
+  <div class="flex items-center justify-center h-screen">
+    <img
+      :src="require('./assets/images/loading-gif.gif')"
+      class="image w-40"
+      alt="spinner"
+    />
   </div>
-  Loaaading
 </template>
 
-<script setup></script>
+<style scoped></style>

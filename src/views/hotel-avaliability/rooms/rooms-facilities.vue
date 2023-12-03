@@ -4,7 +4,7 @@
 
     <!-- render dynamic facilities if exist  -->
     <div
-      v-if="block"
+      v-if="!block"
       class="room-info grid"
       style="grid-template-columns: repeat(2, minmax(0, 250px))"
     >
@@ -23,7 +23,7 @@
     <!-- render static facilities if not exist -->
     <div v-else>
       <div
-        class="room-info grid mb-3"
+        class="room-info grid mb-3 mx-2"
         style="grid-template-columns: repeat(2, minmax(0, 250px))"
       >
         <div class="flex gap-4 items-center">

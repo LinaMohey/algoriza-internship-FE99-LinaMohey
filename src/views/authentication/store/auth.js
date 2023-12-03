@@ -6,21 +6,26 @@ import userData from "@/views/authentication/assets/data/auth.json";
 // defining pinia store
 export const useAuthStore = defineStore("auth", {
   state: () => ({
-    isAuthenticated: false,
-    user: null,
+    isAuthenticated: localStorage.getItem("authenticated-user") !== null, //check if there's user in local storage and set the value to it
+    user: JSON.parse(localStorage.getItem("authenticated-user")) || null,
+    showModal: false, // for welcome modal when authenticated
   }),
+
   actions: {
-    // Sign In
+    // sign In
     async signIn(email, password) {
       const usersArray = userData.users || [];
+      //check email and password
       const user = usersArray.find(
         user => user.email === email && user.password === password
       );
-
+      // if data is correct set user to storage
       if (user) {
         this.isAuthenticated = true;
         this.user = user;
         localStorage.setItem("authenticated-user", JSON.stringify(user));
+        this.showModal = true;
+
         return true;
       } else {
         console.log("You are not a user");
@@ -30,20 +35,20 @@ export const useAuthStore = defineStore("auth", {
 
     // Sign Out
     signOut() {
+      //remocing the key of the user form the local storag
       this.isAuthenticated = false;
       this.user = null;
-      localStorage.removeItem("auth");
+      localStorage.removeItem("authenticated-user");
     },
 
-    // Register
+    // register
     async register(email, password, confirmPassword) {
       if (password !== confirmPassword) {
         return false;
       }
 
-      //convert to array
+      //convert to array to use array methofs.
       const usersArray = userData.users || [];
-
       if (usersArray.some(user => user.email === email)) {
         return false;
       }
@@ -66,10 +71,6 @@ export const useAuthStore = defineStore("auth", {
         console.log(res.error);
       }
       return true;
-    },
-
-    toggleWelcomeModal() {
-      this.showWelcomeModal = !this.showWelcomeModal;
     },
   },
 });

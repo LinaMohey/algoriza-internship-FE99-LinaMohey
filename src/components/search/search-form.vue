@@ -1,39 +1,43 @@
 <template>
   <div class="min-w-1030 mx-1/2 flex justify-center -translate-y-35">
-    <form @submit.prevent="search" class="bg-white rounded-md p-8 shadow-lg">
-      <!-- refactoring the form -->
-      <!-- destination component -->
-      <destination-selection
-        :destinations="filteredDestination"
-        @updateDestination="handleUpdateDestination"
-      ></destination-selection>
+    <loading-spinner v-if="loading"> </loading-spinner>
 
-      <!-- date component -->
-      <date-inputs
-        @updateCheckIn="handleUpdateCheckIn"
-        @updateCheckOut="handleUpdateCheckOut"
-      ></date-inputs>
+    <div v-if="!loading">
+      <form @submit.prevent="search" class="bg-white rounded-md p-8 shadow-lg">
+        <!-- refactoring the form -->
+        <!-- destination component -->
+        <destination-selection
+          :destinations="filteredDestination"
+          @updateDestination="handleUpdateDestination"
+        ></destination-selection>
 
-      <input
-        class="input-main max-w-147"
-        v-model="rooms"
-        type="number"
-        placeholder="Rooms"
-      />
+        <!-- date component -->
+        <date-inputs
+          @updateCheckIn="handleUpdateCheckIn"
+          @updateCheckOut="handleUpdateCheckOut"
+        ></date-inputs>
 
-      <input
-        class="input-main max-w-147"
-        v-model="guests"
-        type="number"
-        placeholder="Guests"
-      />
-      <button
-        class="bg-blueColor-100 px-35 text-white rounded-md py-10"
-        type="submit"
-      >
-        Search
-      </button>
-    </form>
+        <input
+          class="input-main max-w-147"
+          v-model="rooms"
+          type="number"
+          placeholder="Rooms"
+        />
+
+        <input
+          class="input-main max-w-147"
+          v-model="guests"
+          type="number"
+          placeholder="Guests"
+        />
+        <button
+          class="bg-blueColor-100 px-35 text-white rounded-md py-10"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -85,7 +89,13 @@ const handleUpdateCheckOut = value => {
 };
 // ensure a destination feilds are selected before sending it
 const validateForm = () => {
-  if (!selectedDestination.value || !checkIn.value || !checkOut.value) {
+  if (
+    !selectedDestination.value ||
+    !checkIn.value ||
+    !checkOut.value ||
+    !rooms.value ||
+    !guests.value
+  ) {
     console.log("Please enter all fields");
     return false;
   }
@@ -98,33 +108,33 @@ const search = async () => {
   if (!validateForm()) return;
 
   try {
+    // Set loading to true before making the API call
+    loading.value = true;
+
     // update the store with selected destination
     const selectedDestinationObject = destinations.value.find(
       destination => destination.dest_id === selectedDestination.value
     );
 
-    //check if the id has city name/destination related to it.
+    // check if the id has city name/destination related to it
     if (!selectedDestinationObject) {
       console.log("destination not found for this id");
       return;
     }
 
-    //setting the selected destination in the store to use later
+    // setting the selected destination in the store to use later
     searchResultStore.selectedDestination = selectedDestinationObject.city_name;
 
     // calling the search method in the store with selected values
     await searchResultStore.searchHotels(
       selectedDestination.value,
-      console.log(selectedDestination.value),
       checkIn.value,
-      console.log(checkIn),
-
       checkOut.value,
       rooms.value,
       guests.value
     );
 
-    // setting selected values in store to use later
+    // setting selected values in the store to use later
     searchResultStore.setFormData({
       selectedDestination: selectedDestination.value,
       checkIn: checkIn.value,
@@ -137,6 +147,9 @@ const search = async () => {
     router.push("/hotel-result");
   } catch (error) {
     console.error(error);
+  } finally {
+    // Set loading to false after the API call is complete, whether it's successful or not
+    loading.value = false;
   }
 };
 </script>

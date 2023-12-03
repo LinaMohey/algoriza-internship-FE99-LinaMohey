@@ -1,7 +1,7 @@
 <template>
   <!-- overview of each room -->
   <section class="overview-content px-4 m-15">
-    <h4 class="text-lg font-semibold mb-20 py-10">Overview</h4>
+    <h4 class="text-lg font-semibold mb-20 py-10 pt-5">Overview</h4>
 
     <!-- render dynamic room desc if exist -->
     <p v-if="block" class="text-grayColor-300">

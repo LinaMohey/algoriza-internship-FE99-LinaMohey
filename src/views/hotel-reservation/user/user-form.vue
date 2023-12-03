@@ -1,4 +1,5 @@
 <template>
+  <!-- form of user to submit his data -->
   <form class="p-30">
     <div
       class="grid grid-cols-2 gap-4"

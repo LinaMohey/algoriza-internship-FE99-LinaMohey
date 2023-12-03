@@ -7,6 +7,11 @@ body {
   font-family: "SF Pro Display", sans-serif;
 }
 
+/* Making class for drop down menu for each list inside it */
+.dropdown-list {
+  @apply flex items-center cursor-pointer p-3 gap-2;
+}
+/* Making class related to the sections in the home page */
 .flex-section {
   @apply flex mb-10 gap-48;
 }
@@ -23,10 +28,12 @@ body {
   @apply bg-grayColor-100 p-18 rounded-tl-md rounded-tr-md mb-4 border border-grayColor-400;
 }
 
+/* making utility class to the inspiration section in home page */
 .inspiration-section {
   @apply absolute bottom-25 px-4 text-white;
 }
 
+/* Making classes related to login and register components */
 .title-login-register {
   @apply text-2xl font-semibold mb-30 text-center;
 }
@@ -42,6 +49,7 @@ body {
   @apply w-full bg-blueColor-100 text-white p-2 rounded-md;
 }
 
+/* Making classes related to the inputs in the reservation component */
 .reservation-input {
   @apply mt-1 border rounded-s py-10 px-12 bg-grayColor-100 outline-blueColor-100;
 }
@@ -52,4 +60,24 @@ body {
 
 .reservation-card {
   @apply shadow-sm max-w-810 rounded-md bg-white;
+}
+
+/* Make utility class related to modal component (welcome and booking) */
+.modal-backdrop {
+  @apply bg-black bg-opacity-60 min-w-1500 top-0 absolute inset-0 flex-register-login z-10;
+}
+
+.modal-container {
+  @apply bg-white p-30 rounded-lg max-w-400 max-h-500;
+}
+
+.modal-title {
+  @apply text-center m-10 font-bold text-xl tracking-wider;
+}
+.modal-text {
+  @apply mb-40 text-center text-grayColor-300;
+}
+
+.modal-button {
+  @apply block mx-auto bg-blue-500 text-white px-3 py-2 font-medium tracking-wide rounded-md w-full;
 }

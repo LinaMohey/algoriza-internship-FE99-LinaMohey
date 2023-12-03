@@ -1,4 +1,5 @@
 <template>
+  <!-- title before the form of user data -->
   <div class="room-info reservation-title">
     <div class="user-icon">
       <img src="../assets/images/user/user-icon.png" alt="user-icon" />

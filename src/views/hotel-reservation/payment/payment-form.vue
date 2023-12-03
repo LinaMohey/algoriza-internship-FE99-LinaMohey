@@ -1,10 +1,13 @@
 <template>
+  <!-- form to submit card details of the user -->
   <form class="px-20">
     <div class="card-name mb-20">
       <label for="name" class="block text-md font-medium">Name on card</label>
       <div class="flex gap-3 items-center">
         <input type="text" id="name" class="reservation-input min-w-500" />
-        <div><img src="@/assets/checked.png" alt="valid" /></div>
+        <div>
+          <img src="../assets/images/payment/checked.png" alt="valid" />
+        </div>
       </div>
     </div>
 
@@ -18,7 +21,7 @@
           id="card-number"
           class="reservation-input min-w-500 mb-20"
         />
-        <img src="@/assets/checked.png" alt="valid" />
+        <img src="../assets/images/payment/checked.png" alt="valid" />
       </div>
     </div>
 
@@ -38,7 +41,7 @@
           </select>
         </div>
         <div>
-          <img src="@/assets/checked.png" alt="valid" />
+          <img src="../assets/images/payment/checked.png" alt="valid" />
         </div>
       </div>
     </div>
@@ -70,7 +73,7 @@
           />
         </div>
       </div>
-      <img src="@/assets/checked.png" alt="valid" />
+      <img src="../assets/images/payment/checked.png" alt="valid" />
     </div>
   </form>
 </template>

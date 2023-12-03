@@ -1,10 +1,13 @@
 <template>
   <!-- hotel images -->
-  <section class="hotel-images mx-auto">
+  <section class="hotel-images m-auto">
     <!-- show dynamic photos if exist -->
-    <div v-if="block" class="grid grid-cols-2 grid-rows-2 gap-x-10">
+    <div
+      v-if="block"
+      class="grid grid-cols-2 grid-rows-2 gap-x-10 justify-center place-content-start"
+    >
       <img
-        class="rounded"
+        class="rounded self-center"
         :class="{
           'row-span-2 self-center min-w-670 max-w-820 min-h-400 max-h-452':
             index === 0,

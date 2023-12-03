@@ -3,8 +3,9 @@ import axios from "axios";
 
 export const useSearchResultStore = defineStore("searchResult", {
   state: () => ({
-    APIkey: "6bfbff6d14mshe5738732e1623c1p1ad2a4jsnb3e27ca98f62",
+    APIkey: "96f009ecf4msh4ca176f407b3d8ep1f6565jsnf69e1eff77a9",
     destinations: [],
+    meta: [],
     hotels: [],
     selectedDestination: null,
     sortOptions: [],
@@ -79,8 +80,10 @@ export const useSearchResultStore = defineStore("searchResult", {
           }
         );
         this.hotels = response.data.data.hotels;
+        this.meta = response.data.data.meta;
 
         console.log(this.hotels);
+        console.log(meta);
       } catch (error) {
         console.error(error);
       }

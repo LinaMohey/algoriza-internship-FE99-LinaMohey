@@ -8,7 +8,11 @@
     />
 
     <!-- static image if not exist -->
-    <img v-else src="@/assets/room2.png" alt="default-room-image" />
+    <img
+      v-else
+      src="../../hotel-avaliability/assets/images/hotel-images/room2.png"
+      alt="default-room-image"
+    />
   </section>
 </template>
 

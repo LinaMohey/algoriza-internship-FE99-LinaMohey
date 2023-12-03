@@ -18,7 +18,7 @@ app.component("logo", Logo);
 app.component("navbar", Navbar);
 app.component("warning-section", warningSection);
 app.component("main-layout", mainLayout);
-app.component("loadingSpinner", loadingSpinner);
+app.component("loading-spinner", loadingSpinner);
 
 app.use(router);
 app.use(pinia);

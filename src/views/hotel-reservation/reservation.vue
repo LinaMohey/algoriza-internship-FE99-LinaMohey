@@ -56,4 +56,5 @@ import bookingInfo from "./booking-info.vue";
 import reservedInfo from "./reserved-hotel/reserved-info.vue";
 import reservedImage from "./reserved-hotel/reserved-image.vue";
 import reservedPrice from "./reserved-hotel/reserved-price.vue";
+import { onMounted } from "vue";
 </script>

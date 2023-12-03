@@ -25,14 +25,16 @@
         <span class="text-blueColor-100">Terms of Use.</span>
       </p>
       <router-link
-        :to="{ name: 'welcome-card' }"
+        :to="{ name: 'reserved-trips' }"
         class="py-15 px-18 bg-blueColor-100 text-white my-20 rounded-md"
       >
         Complete booking
       </router-link>
 
       <div class="mt-30 flex gap-2">
-        <div><img src="@/assets/lock.png" alt="lock-icon" /></div>
+        <div>
+          <img src="./assets/images/payment/lock.png" alt="lock-icon" />
+        </div>
         <p class="mb-15">
           We use secure transmission and encrypted storage to protect your
           personal information

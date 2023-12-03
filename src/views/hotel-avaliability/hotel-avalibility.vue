@@ -1,12 +1,13 @@
 <template>
   <main-layout>
+    <!-- Loading spinner -->
     <loading-spinner v-if="loading"> </loading-spinner>
 
     <div class="main-container" v-if="!loading">
       <!-- Section to contain hotel rooms -->
-      <!-- <section v-if="loading" class="hotel-images mx-auto"> -->
       <!-- hotel images -->
       <hotel-images
+        class="self-center"
         :hotelDetails="hotelDetails"
         :block="block"
         :room_id="room_id"
@@ -42,8 +43,8 @@
           </div>
         </section>
         <!-- map and area section -->
-        <section class="map-section">
-          <hotel-map> </hotel-map>
+        <section class="map-section self-center">
+          <hotel-map :hotelDetails="hotelDetails"> </hotel-map>
 
           <!-- discover the area -->
           <explore-area> </explore-area>
@@ -53,11 +54,12 @@
       <!-- avaliable rooms  -->
       <section
         v-if="block"
-        class="avaliable-rooms flex gap-2 justify-between mb-150"
+        id="rooms"
+        class="avaliable-rooms flex gap-1 justify-between mb-150"
       >
         <!-- ad static image -->
         <div class="ad-image my-auto self-center">
-          <img src="@/assets/ad-reservation.png " alt="" />
+          <img src="./assets/images/ad-reservation.png" alt="ad-image" />
         </div>
 
         <div class="room shadow-md mt-50" id="rooms ">
@@ -84,6 +86,7 @@
             :room_id="room_id"
           >
           </rooms-info>
+
           <!-- reserve button to direct to booking -->
           <button
             @click="navigateToReservation"
@@ -127,16 +130,9 @@
           </button>
         </div>
       </section>
-
-      <!-- if there's no avaliable room -->
-      <div
-        v-else
-        class="shadow-md mt-50 bg-red-400 p-20 text-center text-lg text-bold"
-      >
-        No rooms available
-      </div>
     </div>
-    <warning-section> </warning-section>
+    <!-- warning corona section -->
+    <warning-section class="my-100"> </warning-section>
   </main-layout>
 </template>
 
@@ -167,6 +163,7 @@ const setHotelDetails = avaliableHotels.setDetails(hotelDetails);
 const setRoomId = avaliableHotels.setRoomId(room_id);
 const router = useRouter();
 
+//navigate to resetvation component
 const navigateToReservation = () => {
   router.push({ name: "reservation" });
 };

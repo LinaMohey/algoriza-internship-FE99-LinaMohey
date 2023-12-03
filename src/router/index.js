@@ -2,11 +2,11 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/views/home-page.vue";
 import Register from "@/views/authentication/register.vue";
 import SignIn from "@/views/authentication/sign-in.vue";
-import WelcomeCard from "@/views/welcome-card.vue";
 import hotelResults from "@/views/search-results/hotel-results.vue";
 import hotelAvaliability from "@/views/hotel-avaliability/hotel-avalibility.vue";
 import Reservation from "@/views/hotel-reservation/reservation.vue";
 import { useAuthStore } from "@/views/authentication/store/auth";
+import reservedTrips from "@/views/my-trips/reserved-trips.vue";
 
 const routes = [
   {
@@ -23,11 +23,6 @@ const routes = [
     path: "/sign-in",
     name: "sign-in",
     component: SignIn,
-  },
-  {
-    path: "/welcome",
-    name: "welcome-card",
-    component: WelcomeCard,
   },
 
   {
@@ -56,9 +51,14 @@ const routes = [
     props: true, // This allows you to use route params as props in your component
   },
   {
-    path: "/reservation/",
+    path: "/reservation",
     name: "reservation",
     component: Reservation,
+  },
+  {
+    path: "/my-trips",
+    name: "reserved-trips",
+    component: reservedTrips,
   },
 ];
 

@@ -32,6 +32,9 @@
     </div>
   </header>
 
+  <!-- spinner when fetching data -->
+  <loading-spinner v-if="loading"> </loading-spinner>
+
   <!-- main section -->
   <section
     class="main-container max-w-1350 mx-auto mt-12 flex gap-20 justify-center"
@@ -56,13 +59,14 @@
     </div>
 
     <!-- hotel results -->
-    <div class="search-results m-10">
+    <div v-if="!loading" class="search-results m-10">
       <!-- destination information and sorting -->
       <div class="desination-info flex justify-between m-6">
-        <p class="text-2xl font-semibold tracking-wide">
-          {{ selectedDestination }} : {{ filteredHotels.length }} search results
-          found
-        </p>
+        <div v-for="meta in propertyMeta" :key="meta">
+          <p class="text-2xl font-semibold tracking-wide">
+            {{ selectedDestination }} : {{ meta.title }} search results found
+          </p>
+        </div>
 
         <!-- sort by filter -->
         <filter-by-sort></filter-by-sort>
@@ -133,11 +137,7 @@ import navbar from "@/components/shared/navbar.vue";
 
 const searchResultStore = useSearchResultStore();
 
-// fetching the options once the component is mounted
-onMounted(async () => {
-  await searchResultStore.fetchSortOptions();
-});
-
+const loading = ref(true);
 const hotels = searchResultStore.hotels;
 const selectedDestination = searchResultStore.selectedDestination;
 const checkIn = searchResultStore.form.checkIn;
@@ -146,6 +146,7 @@ const rooms = searchResultStore.form.rooms;
 const guests = searchResultStore.form.guests;
 const propertyName = ref("");
 const selectedRating = ref(0);
+const propertyMeta = searchResultStore.meta;
 
 // update the property name by emitting custom event
 const handlePropertyName = value => {
@@ -169,6 +170,18 @@ const filteredHotels = computed(() => {
 
     return nameMatch && ratingMatch;
   });
+});
+
+// fetching the options once the component is mounted
+onMounted(async () => {
+  try {
+    // Wait for fetchSortOptions to complete before setting loading to false
+    await searchResultStore.fetchSortOptions();
+    loading.value = false;
+  } catch (error) {
+    console.error(error);
+    loading.value = false; // Ensure loading is set to false even in case of an error
+  }
 });
 </script>
 
