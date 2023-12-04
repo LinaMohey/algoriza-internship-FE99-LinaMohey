@@ -28,7 +28,7 @@
 
       <!-- important info about booking -->
       <div class="user-info reservation-card mt-35 mb-100">
-        <booking-info> </booking-info>
+        <booking-info @complete-booking="addTrip"> </booking-info>
       </div>
     </section>
 
@@ -58,4 +58,39 @@ import reservedInfo from "./reserved-hotel/reserved-info.vue";
 import reservedImage from "./reserved-hotel/reserved-image.vue";
 import reservedPrice from "./reserved-hotel/reserved-price.vue";
 import { onMounted } from "vue";
+import { useAvaliableHotels } from "../hotel-avaliability/store/avaliable-hotels";
+import { useTripStore } from "../my-trips/store/trips";
+import { useSearchResultStore } from "../search-results/store/searchResults";
+
+//  im trying to get data from reservation and put it in the trip store and will be set when the button is clicked
+const searchResults = useSearchResultStore();
+const tripStore = useTripStore();
+const avaliableHotels = useAvaliableHotels();
+const hotelDetails = avaliableHotels.hotelDetails;
+const hotelName = avaliableHotels.hotelDetails.hotel_name;
+const reviews = avaliableHotels.hotelDetails.review_nr;
+const checkIn = searchResults.form.checkIn;
+const checkOut = searchResults.form.checkOut;
+const room_id = avaliableHotels.room_id;
+
+const hotelImage =
+  avaliableHotels.hotelDetails.rooms[room_id]?.photos[0].url_original;
+
+tripStore.setName(hotelName);
+tripStore.setReviews(reviews);
+tripStore.setCheckIn(checkIn);
+tripStore.setCheckOut(checkOut);
+tripStore.setHotelImage(hotelImage);
+
+const addTrip = () => {
+  tripStore.addTrip({
+    name: hotelName,
+    reviews,
+    checkIn,
+    checkOut,
+    hotelImage,
+  });
+};
+
+console.log(tripStore.trips);
 </script>

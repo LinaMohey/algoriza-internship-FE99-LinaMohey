@@ -55,10 +55,12 @@ import { ref } from "vue";
 
 const router = useRouter();
 const showModal = ref(false);
+const emit = defineEmits();
 
 //function to show the button and scropp to the top
 const closeModalAndScrollTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
   showModal.value = true;
+  emit("complete-booking");
 };
 </script>
