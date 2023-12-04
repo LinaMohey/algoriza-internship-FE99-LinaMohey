@@ -7,44 +7,44 @@
           <p class="mt-2">Your next goto companion for <br />travel</p>
         </div>
         <div class="company-link">
-          <h4 class="mb-2">Company</h4>
-          <div class="flex-footer mb-1">
+          <h4 class="mb-2 text-lg font-semibold">Company</h4>
+          <div class="flex-footer text-grayColor-600 mb-1">
             <a href="#">About</a>
-            <a href="#">Jobs</a>
-            <a href="#">Newsroom</a>
+            <a class="py-1" href="#">Jobs</a>
+            <a class="py-1" href="#">Newsroom</a>
             <a href="#">Advertising</a>
-            <a href="#">Contact us</a>
+            <a class="py-1" href="#">Contact us</a>
           </div>
         </div>
 
         <div class="explore-link">
-          <h4 class="mb-2">Explore</h4>
-          <div class="flex-footer mb-1">
+          <h4 class="mb-2 text-lg font-semibold">Explore</h4>
+          <div class="flex-footer text-grayColor-600 mb-1">
             <a href="#">Australia</a>
-            <a href="#">New Zealand</a>
+            <a class="py-1" href="#">New Zealand</a>
             <a href="#">United States America (USA)</a>
-            <a href="#">Greece</a>
+            <a class="py-1" href="#">Greece</a>
             <a href="#">Maldives</a>
-            <a href="#">Singapore</a>
-            <a href="#">See more</a>
+            <a class="py-1" href="#">Singapore</a>
+            <a class="text-blueColor-100" href="#">See more</a>
           </div>
         </div>
         <div class="policies-link">
-          <h4 class="mb-2">Terms and Policies</h4>
-          <div class="flex-footer mb-1">
+          <h4 class="mb-2 text-lg font-semibold">Terms and Policies</h4>
+          <div class="flex-footer text-grayColor-600 mb-1">
             <a href="#">Privacy Policy</a>
-            <a href="#">Terms of use</a>
+            <a class="py-1" href="#">Terms of use</a>
             <a href="#">Acessibility</a>
-            <a href="#">Reward system policy</a>
+            <a class="py-1" href="#">Reward system policy</a>
           </div>
         </div>
         <div class="support-link">
-          <h4 class="mb-2">Help and Support</h4>
-          <div class="flex-footer mb-1">
+          <h4 class="mb-2 text-lg font-semibold">Help and Support</h4>
+          <div class="flex-footer text-grayColor-600 mb-1">
             <a href="#">Support</a>
-            <a href="#">Cancel your bookings</a>
+            <a class="py-1" href="#">Cancel your bookings</a>
             <a href="#">Use Coupon</a>
-            <a href="#">Refund Policies</a>
+            <a class="py-1" href="#">Refund Policies</a>
             <a href="#">International Travel Documents</a>
           </div>
         </div>

@@ -1,4 +1,5 @@
 <template>
+  <!-- date selection input for check in and check out -->
   <input
     class="input-main"
     v-model="checkIn"

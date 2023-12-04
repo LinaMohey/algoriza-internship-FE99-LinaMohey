@@ -4,10 +4,10 @@
     <!-- show dynamic photos if exist -->
     <div
       v-if="block"
-      class="grid grid-cols-2 grid-rows-2 gap-x-10 justify-center place-content-start"
+      class="grid grid-cols-2 grid-rows-2 gap-x-10 justify-center mt-50 place-content-start"
     >
       <img
-        class="rounded self-center"
+        class="rounded self-center mx-120"
         :class="{
           'row-span-2 self-center min-w-670 max-w-820 min-h-400 max-h-452':
             index === 0,

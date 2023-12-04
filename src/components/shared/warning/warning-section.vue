@@ -1,4 +1,5 @@
 <template>
+  <!-- warning label for corona -->
   <div
     class="warning flex my-25 bg-warning p-20 rounded-lg gap-15 justify-items-center"
   >

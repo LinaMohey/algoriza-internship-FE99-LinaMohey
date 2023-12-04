@@ -1,7 +1,8 @@
 <template>
   <!-- dynamic image if room exist -->
-  <section class="room-image rounded-t-md">
+  <section class="room-image shadow-md">
     <img
+      class="rounded-t-lg"
       v-if="showSpecificImage()"
       :src="showSpecificImage()"
       alt="room-image"

@@ -68,13 +68,9 @@ const submitForm = async () => {
     const isUser = await authStore.signIn(email.value, password.value);
 
     if (isUser) {
-      await new Promise(resolve => setTimeout(resolve, 500));
-      console.log("from sign in before the push", authStore.showModal);
       authStore.showModal = true;
       await new Promise(resolve => setTimeout(resolve, 500));
-
       router.push({ path: "/" });
-      console.log("from sign in after the push", authStore.showModal);
     } else {
       console.log("You are not a user.");
     }

@@ -2,9 +2,9 @@
   <!-- explore aarea section -->
   <div class="explore-area my-40">
     <h4 class="mb-20 text-lg font-medium">Explore the area</h4>
-
     <div class="area flex justify-between py-2">
       <div class="area-info flex gap-2">
+        <!-- each area detail -->
         <div>
           <img
             src="../assets/images/explore-hotels/plane.png"
@@ -18,6 +18,7 @@
 
     <div class="area flex justify-between py-2">
       <div class="area-info flex gap-2">
+        <!-- each area detail -->
         <div>
           <img
             src="../assets/images/explore-hotels/location2.png"
@@ -31,6 +32,8 @@
 
     <div class="area flex justify-between py-2">
       <div class="area-info flex gap-2">
+        <!-- each area detail -->
+
         <div>
           <img
             src="../assets/images/explore-hotels/location2.png"
@@ -43,6 +46,7 @@
     </div>
 
     <div class="area flex justify-between py-2">
+      <!-- each area detail -->
       <div class="area-info flex gap-2">
         <div>
           <img
@@ -56,6 +60,7 @@
     </div>
 
     <div class="area flex justify-between py-3">
+      <!-- each area detail -->
       <div class="area-info flex gap-2">
         <div>
           <img

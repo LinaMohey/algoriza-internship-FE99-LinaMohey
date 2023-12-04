@@ -91,20 +91,27 @@ const togglePasswordVisibility = field => {
 // function to handle form submission
 const submitForm = async () => {
   loading.value = true;
+  try {
+    const isRegister = await authStore.register(
+      email.value,
+      password.value,
+      confirmPassword.value
+    );
+    // if the user is valid will direct to home
+    if (isRegister) {
+      await new Promise(resolve => setTimeout(resolve, 500));
+      authStore.showModal = true;
+      await new Promise(resolve => setTimeout(resolve, 500));
+      router.push({ path: "/" });
 
-  const isRegister = await authStore.register(
-    email.value,
-    password.value,
-    confirmPassword.value
-  );
-
-  loading.value = false;
-
-  if (isRegister) {
-    await new Promise(resolve => setTimeout(resolve, 500));
-    router.push({ path: "/welcome" });
-  } else {
-    console.log("registration failed.");
+      // else will return
+    } else {
+      console.log("registration failed");
+    }
+  } catch (error) {
+    console.error("An error occurred during sign-up:", error);
+  } finally {
+    loading.value = false;
   }
 };
 </script>

@@ -1,6 +1,7 @@
 <template>
   <navbar> </navbar>
-  <div class="flex max-w-1350 mx-auto justify-evenly">
+  <div class="flex max-w-1350 mx-auto justify-between">
+    <!-- forms and important info -->
     <section class="reservation">
       <header class="mt-20">
         <h4 class="text-32 font-bold">Secure your reservation</h4>

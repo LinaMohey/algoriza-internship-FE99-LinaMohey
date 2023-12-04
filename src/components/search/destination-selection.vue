@@ -1,6 +1,5 @@
-heres the destinaiton:
-<!-- destination-selection.vue -->
 <template>
+  <!-- form for destination selection -->
   <label for="destination" class="input-main px-5"
     >Where are you going?
     <select

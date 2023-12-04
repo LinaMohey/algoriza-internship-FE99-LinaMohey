@@ -61,7 +61,7 @@
     <!-- hotel results -->
     <div v-if="!loading" class="search-results m-10">
       <!-- destination information and sorting -->
-      <div class="desination-info flex justify-between m-6">
+      <div class="desination-info flex justify-between gap-10 my-6">
         <div v-for="meta in propertyMeta" :key="meta">
           <p class="text-2xl font-semibold tracking-wide">
             {{ selectedDestination }} : {{ meta.title }} search results found

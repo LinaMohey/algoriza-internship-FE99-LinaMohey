@@ -1,15 +1,16 @@
 <template>
+  <!-- reserved hotel info -->
   <div class="hotel-info mx-25 py-3">
     <h4 class="my-10 text-lg font-medium">{{ hotelName }}</h4>
     <div class="rating flex gap-2 items-center">
       <!-- rating component -->
-
       <div class="rating flex gap-2">
         <reserved-rating> </reserved-rating>
 
         <p class="text-grayColor-300">4.5 ({{ reviews }}) Reviews</p>
       </div>
     </div>
+    <!-- speciifcation of each hotel -->
     <div class="specifications mt-30 text-grayColor-300">
       <p class="mb-2 text-redColor-100">Non refundable</p>
       <p class="mb-2">Check in: {{ checkIn }}</p>

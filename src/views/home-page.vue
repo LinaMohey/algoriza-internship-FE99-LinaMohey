@@ -1,14 +1,13 @@
 <template>
-  <!-- show the modal -->
-
   <main-layout>
+    <!-- show moda; if the use is authenticated -->
     <welcome-modal
       v-if="authStore.showModal"
       @closeModal="authStore.showModal = false"
     >
     </welcome-modal>
-    <!-- dynamic rendering through slot -->
 
+    <!-- dynamic rendering through slot -->
     <main-section> </main-section>
     <warning-section> </warning-section>
     <div class="mx-auto">
@@ -17,11 +16,11 @@
       <popular-hotels> </popular-hotels>
     </div>
 
-    <div class="m-50">
+    <div class="mt-60 mb-50 mx-auto">
       <img
         src="@/assets/download-app/download-app.png"
         alt="download-app-image"
-        class="w-1350 mx-auto"
+        class="min-w-1350 mx-auto"
       />
     </div>
     <explore> </explore>

@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 
 // importing user data stored in JSON file
-import userData from "@/views/authentication/assets/data/auth.json";
+import userData from "@/assets/data/auth.json";
 
 // defining pinia store
 export const useAuthStore = defineStore("auth", {
@@ -33,7 +33,7 @@ export const useAuthStore = defineStore("auth", {
       }
     },
 
-    // Sign Out
+    // sign Out
     signOut() {
       //remocing the key of the user form the local storag
       this.isAuthenticated = false;

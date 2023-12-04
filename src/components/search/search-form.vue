@@ -1,43 +1,39 @@
 <template>
   <div class="min-w-1030 mx-1/2 flex justify-center -translate-y-35">
-    <loading-spinner v-if="loading"> </loading-spinner>
+    <!-- refactoring the form -->
+    <form @submit.prevent="search" class="bg-white rounded-md p-8 shadow-lg">
+      <!-- destination component -->
+      <destination-selection
+        :destinations="filteredDestination"
+        @updateDestination="handleUpdateDestination"
+      ></destination-selection>
 
-    <div v-if="!loading">
-      <form @submit.prevent="search" class="bg-white rounded-md p-8 shadow-lg">
-        <!-- refactoring the form -->
-        <!-- destination component -->
-        <destination-selection
-          :destinations="filteredDestination"
-          @updateDestination="handleUpdateDestination"
-        ></destination-selection>
+      <!-- date component -->
+      <date-inputs
+        @updateCheckIn="handleUpdateCheckIn"
+        @updateCheckOut="handleUpdateCheckOut"
+      ></date-inputs>
 
-        <!-- date component -->
-        <date-inputs
-          @updateCheckIn="handleUpdateCheckIn"
-          @updateCheckOut="handleUpdateCheckOut"
-        ></date-inputs>
+      <input
+        class="input-main max-w-147"
+        v-model="rooms"
+        type="number"
+        placeholder="Rooms"
+      />
 
-        <input
-          class="input-main max-w-147"
-          v-model="rooms"
-          type="number"
-          placeholder="Rooms"
-        />
-
-        <input
-          class="input-main max-w-147"
-          v-model="guests"
-          type="number"
-          placeholder="Guests"
-        />
-        <button
-          class="bg-blueColor-100 px-35 text-white rounded-md py-10"
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
-    </div>
+      <input
+        class="input-main max-w-147"
+        v-model="guests"
+        type="number"
+        placeholder="Guests"
+      />
+      <button
+        class="bg-blueColor-100 px-35 text-white rounded-md py-10"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
   </div>
 </template>
 
@@ -108,9 +104,6 @@ const search = async () => {
   if (!validateForm()) return;
 
   try {
-    // Set loading to true before making the API call
-    loading.value = true;
-
     // update the store with selected destination
     const selectedDestinationObject = destinations.value.find(
       destination => destination.dest_id === selectedDestination.value
@@ -149,7 +142,6 @@ const search = async () => {
     console.error(error);
   } finally {
     // Set loading to false after the API call is complete, whether it's successful or not
-    loading.value = false;
   }
 };
 </script>

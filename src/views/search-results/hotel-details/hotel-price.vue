@@ -1,17 +1,18 @@
 <template>
+  <!-- prive of each hot -->
   <section
     class="price-breakdown flex items-center gap-2 absolute bottom-4 right-0 px-3"
   >
     <p
       v-if="hasStrikethroughPrice(hotel)"
       :class="{
-        'line-through text-xs': hasStrikethroughPrice(hotel),
+        'line-through text-sm': hasStrikethroughPrice(hotel),
         'text-red-500 font-medium': hasStrikethroughPrice(hotel),
       }"
     >
       {{ getStrikethroughPrice(hotel) }}
     </p>
-    <p class="text-grayColor-600 text-3xl font-medium">
+    <p class="text-grayColor-600 text-xl font-medium">
       {{ formatPrice(hotel) }}
     </p>
 

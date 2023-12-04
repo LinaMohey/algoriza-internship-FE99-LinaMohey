@@ -6,8 +6,9 @@
     <div class="main-container" v-if="!loading">
       <!-- Section to contain hotel rooms -->
       <!-- hotel images -->
+
       <hotel-images
-        class="self-center"
+        class=""
         :hotelDetails="hotelDetails"
         :block="block"
         :room_id="room_id"

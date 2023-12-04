@@ -1,4 +1,5 @@
 <template>
+  <!-- price of each reservation -->
   <div
     class="important-info bg-green-100 p-4 flex items-center rounded-tr-md rounded-tl-md gap-4"
   >

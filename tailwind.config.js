@@ -65,6 +65,7 @@ module.exports = {
         1000: "1000px",
         1400: "1400px",
         1500: "1500px",
+        1350: "1350px",
       },
       maxWidth: {
         60: "60px",
@@ -119,6 +120,7 @@ module.exports = {
 
       fontSize: {
         22: "22px",
+        28: "28px",
         32: "32px",
       },
     },

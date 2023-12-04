@@ -1,6 +1,8 @@
 <template>
+  <!-- payment method section -->
   <div class="payment-methods">
     <p class="shadow-sm p-20">Debit/Credit Card</p>
+    <!-- images of each card typr -->
     <div class="card-images flex gap-2 items-center m-20">
       <div>
         <img

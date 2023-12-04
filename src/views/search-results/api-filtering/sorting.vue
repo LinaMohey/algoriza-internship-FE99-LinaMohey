@@ -1,8 +1,11 @@
 <template>
   <!-- sorting hotels by -->
   <section class="sort-by">
-    <select v-model="selectedSort">
-      <option value="">
+    <select
+      v-model="selectedSort"
+      class="block appearance-none w-full bg-white border border-gray-300 p-2 rounded-md leading-tight focus:outline-none focus:border-blue-500"
+    >
+      <option value="" class="text-gray-500">
         Sort by <br />
         <span class="text-grayColor-400">Recommended</span>
       </option>
@@ -10,6 +13,7 @@
         v-for="sortOption in sortOptions"
         :key="sortOption.id"
         :value="sortOption.id"
+        class="text-gray-800"
       >
         {{ sortOption.title }}
       </option>
